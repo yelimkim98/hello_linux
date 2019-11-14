@@ -11,13 +11,14 @@
    // 1의 결과, 다음과 같은 프로젝트 구성을 볼 수 있다.
 
    ...(생략)...
+   
    build
    
    WebContent
    
-	META-INF
+          META-INF
 	
-	WEB-INF
+          WEB-INF
 
 2. git repository를 보면 WebContent 라는 폴더가 있는데,
    Eclipse에서 생성한 프로젝트의 WebContent와 비교해보면
