@@ -27,7 +27,7 @@
 	    	</a>
 	    	<ul class="right-ul">
 	       		<li>ABOUT</li>
-	       		<li>LOGIN</li>
+	       		<li><a href="login.jsp">LOGIN</a></li>
 	       		<li>회원가입</li>
 	        </ul>
         </nav>
