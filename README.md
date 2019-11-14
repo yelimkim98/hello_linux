@@ -39,5 +39,6 @@
 	         LectureList.jsp
 	         LecViewDefault.jsp
 	         LecViewConsole.jsp
+		 ..(생략)
 	         META-INF
 	         WEB-INF
