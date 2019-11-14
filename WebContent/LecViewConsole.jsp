@@ -53,14 +53,11 @@
 	</section>
 	<section id="right_console"> <!-- 오른쪽의 실습창 -->
 		<div id="console_nav">
-			▶ 접기
+			<%="<a href=\"LecViewDefault.jsp?lec=" + req + "\">▶접기</a>" %>
 		</div>
-		<div id="in_console">
-			<iframe src="Console.jsp" id="console_iframe" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 vspace=0>
-				
-			</iframe>
-		</div>
-		
+		<iframe src="Console.jsp" id="console_iframe" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 vspace=0>
+			
+		</iframe>
 	</section>
 </body>
 </html>

@@ -76,7 +76,7 @@
 	</nav>
 	<section>
 		<article id="lecture_list">
-			<a href="">▶ 목차</a>
+			<a>▶ 목차</a>
 		</article>
 		<article id="console">
 			<%="<a href=\"LecViewConsole.jsp?lec=" + req + "\">실습창 ◀</a>"%>
