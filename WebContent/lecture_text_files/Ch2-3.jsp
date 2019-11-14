@@ -1,0 +1,60 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<h1>pwd 명령어</h1>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>
+pwd 설명<br>

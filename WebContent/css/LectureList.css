@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+ * {padding:0; margin:0;}
+
+body {
+	background-color: #244e80;
+	color: white;
+	/*border: 2px dashed red;*/
+	padding-top: 50px;
+}
+
+.lecture_list li {
+	margin-bottom: 17px;	
+	font-size: 20px;
+	list-style: none;
+}
+
+ul > ul {
+	text-indent: 50px;
+}
+
+div.lecture_list {
+	max-width: 640px;
+	margin:auto;
+}
+
+li.strapline {
+	
+}

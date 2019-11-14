@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+ * {padding:0; margin:0;}
+
+body {
+	background-color: #244e80;
+	color: white;
+	/*border: 2px dashed red;*/
+	padding-top: 50px;
+}
+
+.lecture_text {
+	/* 가운데의 본문 영역 */
+	max-width: 640px;
+	margin:auto;
+}
+
+#lecture_list {
+	/* 왼쪽의 목차 버튼 */
+	position: fixed;
+	left: 20px;
+}
+
+#console {
+	/* 오른쪽의 실습창 버튼 */
+	position: fixed;
+	right: 20px;
+}
+
+
+/******* a 태그 기본속성 없애기 *******/
+
+a {
+	text-decoration:none;
+	color:white;
+}
+
+a:visited {
+	text-decoration:none;
+	color: white;
+}
+
+/*******************************/

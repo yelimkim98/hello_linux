@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+ * {padding:0; margin:0;}
+
+body {
+	background-color: #244e80;
+	color: white;
+}
+
+#left_lecture {
+  float: left;
+  display: inline-block;
+}
+
+#right_console {
+	background-color: #204a76; 
+	float: right;
+	display: inline-block;
+}

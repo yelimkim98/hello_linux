@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+ * {padding:0; margin:0;}
+ 
+body {
+	color: white;
+    background-color: #034A65;
+    align-content: center;
+}
+
+ 
+header {
+    height:400px;
+    background-color: #244e80;
+    background-image: url(../img/home/ocean.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:auto;
+}
+
+ul {
+	/* border: 2px dashed red; */
+	display: inline-block;
+	height: 40px;
+}
+
+li {
+	display: inline-block;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 40px;
+	vertical-align:top;
+}
+
+.left-ul {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.right-ul {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+span {
+    font-weight: bold;
+    line-height: 200px;
+    font-size: 70px;
+    font-family: impact;
+    text-align: center;
+    color: white;
+}
+
+.linux {
+   	color: #fb9f1e;
+}
+
+p {
+    font-family: Verdana;
+    color:white;
+    margin: 10px;
+}
+
+.lecture_list {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+    background-color: #fb9f1e;
+    color: white;
+    font-family: impact;
+    font-size:20px;
+    border:white;
+    outline: none;
+    width: 100px;
+}
+
+.site-description {
+	margin : 10px;
+}
+
+footer {
+	text-align : center;
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+
+a {
+	text-decoration:none;
+	color:white;
+}
+
+a:visited {
+	text-decoration:none;
+	color: white;
+}
+
+nav {
+	/* 다른 페이지의 최상단 헤더와 폰트 크기가 같아야 하므로 건드리지 말것 */
+	font-size: 18px;
+}
