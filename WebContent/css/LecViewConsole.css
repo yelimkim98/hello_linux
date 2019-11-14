@@ -17,3 +17,16 @@ body {
 	float: right;
 	display: inline-block;
 }
+
+#in_lecture {
+	padding: 8px;
+}
+
+#in_console {
+	padding: 8px;
+}
+
+#console_nav {
+	display: block;
+	background-color: gray;
+}
