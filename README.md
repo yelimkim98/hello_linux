@@ -20,12 +20,8 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018)
               META-INF
               WEB-INF
 
-3. git repository를 보면 WebContent 라는 폴더가 있는데,<br>
-   Eclipse에서 생성한 프로젝트의 WebContent와 비교해보면<br>
-   META-INF, WEB-INF 폴더가 없다.
-
-   git repository의 WebContent 폴더에 있는 모든 파일과 폴더들이<br>
-   이클립스에서 생성한 프로젝트의 WebContent 폴더 하위에 존재하게 해야한다.
+3. git repository의 WebContent 폴더에 있는 모든 파일과 폴더들을 복사하여<br>
+   이클립스 화면의 왼쪽 project explorer에서 WebContent 폴더 안에 붙여넣기한다.
 
    // 2의 결과, 다음과 같이 프로젝트가 구성된다.
    
