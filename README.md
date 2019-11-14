@@ -10,7 +10,7 @@
 
    // 1의 결과, 다음과 같은 프로젝트 구성을 볼 수 있다.
 
-   ...(생략)...
+         ...(생략)...
    
          build
    
@@ -29,19 +29,19 @@
 
    // 2의 결과, 다음과 같이 프로젝트가 구성된다.
    
-   ...(생략)...
-   build
-   WebContent
-	css
-		..(생략)
-	img
-		..(생략)
-	include
-		..(생략)
-	lecture_text_files
-	Home.jsp
-	LectureList.jsp
-	LecViewDefault.jsp
-	LecViewConsole.jsp
-	META-INF
-	WEB-INF
+         ...(생략)...
+         build
+            WebContent
+	         css
+		         ..(생략)
+	         img
+		         ..(생략)
+	         include
+		         ..(생략)
+	         lecture_text_files
+	         Home.jsp
+	         LectureList.jsp
+	         LecViewDefault.jsp
+	         LecViewConsole.jsp
+	         META-INF
+	         WEB-INF
