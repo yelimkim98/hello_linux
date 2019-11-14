@@ -16,11 +16,11 @@
               META-INF
               WEB-INF
 
-2. git repository를 보면 WebContent 라는 폴더가 있는데,
-   Eclipse에서 생성한 프로젝트의 WebContent와 비교해보면
+2. git repository를 보면 WebContent 라는 폴더가 있는데,<br>
+   Eclipse에서 생성한 프로젝트의 WebContent와 비교해보면<br>
    META-INF, WEB-INF 폴더가 없다.
 
-   git repository의 WebContent 폴더에 있는 모든 파일과 폴더들이
+   git repository의 WebContent 폴더에 있는 모든 파일과 폴더들이<br>
    이클립스에서 생성한 프로젝트의 WebContent 폴더 하위에 존재하게 해야한다.
 
    // 2의 결과, 다음과 같이 프로젝트가 구성된다.
