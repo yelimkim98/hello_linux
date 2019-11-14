@@ -1,4 +1,4 @@
-코드 작성하기 전에 pull 을 한번씩 해줄 것
+코드 작성하기 전에 pull 을 한번씩 해줄 것 (git pull origin master)
 
 이 git repository 에는
 우리가 직접 작성한 코드만 올립니다.
