@@ -1,12 +1,14 @@
 이 git repository 에는
 우리가 직접 작성한 코드만 올립니다.
 
-코드를 돌려보기 위해서는 * 실행 방법 을 따라하세요.
+* 개발 환경
+Window 10, Tomcat 8, Eclipse IDE (2017, 2018)
 
+* 코드 실행 방법
 
-* 실행 방법
+1. Tomcat 8 을 설치한다.
 
-1. Eclipse 에서 dynamic web project 를 생성한다.
+2. Eclipse 에서 dynamic web project 를 생성한다.
 
    // 1의 결과, 다음과 같은 프로젝트 구성을 볼 수 있다.
 
@@ -16,7 +18,7 @@
               META-INF
               WEB-INF
 
-2. git repository를 보면 WebContent 라는 폴더가 있는데,<br>
+3. git repository를 보면 WebContent 라는 폴더가 있는데,<br>
    Eclipse에서 생성한 프로젝트의 WebContent와 비교해보면<br>
    META-INF, WEB-INF 폴더가 없다.
 
