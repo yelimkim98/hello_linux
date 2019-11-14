@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/LecViewConsole.css?after" />
+	<link rel="stylesheet" type="text/css" href="css/LecViewConsole.css" />
 	<meta charset="UTF-8">
 	<title>Hello Linux Lecture</title>
 	
@@ -48,14 +48,22 @@
 <body>
 	<section id="left_lecture"> <!-- 왼쪽의 강의 내용 -->
 		<article id="in_lecture">
-			<%@include file="lecture_text_files/Ch2-1.jsp" %>
+			<% if(req != null){
+				   if(req.equals("2-1")) {%>
+						<%@include file="lecture_text_files/Ch2-1.jsp" %>
+				<% } else if(req.equals("2-2")) {%>
+						<%@include file="lecture_text_files/Ch2-2.jsp" %>
+				<% } else if(req.equals("2-3")) {%>
+						<%@include file="lecture_text_files/Ch2-3.jsp" %>
+				<% } %>
+			<% } %>
 		</article>
 	</section>
 	<section id="right_console"> <!-- 오른쪽의 실습창 -->
 		<div id="console_nav">
 			<%="<a href=\"LecViewDefault.jsp?lec=" + req + "\">▶접기</a>" %>
 		</div>
-		<iframe src="Console.jsp" id="console_iframe" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 vspace=0>
+		<iframe src="Shell.jsp" id="console_iframe" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 vspace=0>
 			
 		</iframe>
 	</section>

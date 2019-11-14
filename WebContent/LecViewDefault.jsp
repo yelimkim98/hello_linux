@@ -97,5 +97,8 @@
 			}%>
 		</article>
 	</section>
+	<footer>
+		copyright
+	</footer>
 </body>
 </html>

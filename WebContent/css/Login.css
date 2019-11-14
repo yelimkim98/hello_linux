@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+* {padding: 0; margin: 0;}
+
+body {
+	background-color: rgb(240,240,240);
+}
+
+table, tr, td {
+	text-align: center;
+	vertical-align: middle;
+	border: 0 solid rgba(0, 0, 0, 0);
+	border-collapse: seperate;
+	border-spacing: 20px;
+	padding: 5px;
+}
+
+table, tr {
+	padding-bottom: 20px;
+}
+
+.bottom {
+	font-size: 10px;
+}
+
+.title {
+	display:inline-block;
+   	padding-top:50px;
+   	padding-bottom: 40px;
+   	font-family: impact;
+   	font-size: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#login_main {
+   	display: block;
+   	margin: auto;
+   	text-align: center;
+}
+
+table {
+	width: 500px;
+	margin: 0 auto;
+}
+
+input {
+	line-height: 30px;
+	width: 100%;
+	height: 30px;
+	border-width: 0;
+}
+
+#id_input_mom {
+	background-color: white;
+	border: 1.5px solid rgb(200,200,200);
+	padding: 5px;
+	margin: 5px;
+}
+
+#passwd_input_mom {
+	background-color: white;
+	border : 1.5px solid rgb(200,200,200);
+	padding: 5px;
+	margin: 5px;
+}
