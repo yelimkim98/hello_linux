@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/LecViewConsole.css" />
+	<link rel="stylesheet" type="text/css" href="css/LecViewConsole.css?after" />
 	<meta charset="UTF-8">
 	<title>Hello Linux Lecture</title>
 	
@@ -29,14 +29,15 @@
 	</script>
 	<script>
 		$(document).ready(function(){
-			$('#left_lecture').css("width" , ($(document).width() / 2) + "px");
-			$('#right_console').css("width", ($(document).width() / 2)  + "px");
+			$('#right_console').css("width", ($(document).width() * 0.45)  + "px");
+			$('#left_lecture').css("width" , (($(document).width() - $('#right_console').width()) * 0.95) + "px");
+			
 			$('#left_lecture').css("height" , $(document).height() + "px");
 			$('#right_console').css("height", $(document).height() + "px");
 			
 			$(window).resize(function(){
-				$('#left_lecture').css("width" , ($(document).width() / 2) + "px");
-				$('#right_console').css("width", ($(document).width() / 2) + "px");
+				$('#right_console').css("width", ($(document).width() * 0.45)  + "px");
+				$('#left_lecture').css("width" , (($(document).width() - $('#right_console').width()) * 0.95) + "px");
 			})
 		})		
 	</script>
@@ -55,7 +56,9 @@
 			▶ 접기
 		</div>
 		<div id="in_console">
-			console 영역
+			<iframe src="Console.jsp" id="console_iframe" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 vspace=0>
+				
+			</iframe>
 		</div>
 		
 	</section>

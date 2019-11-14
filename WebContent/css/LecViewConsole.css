@@ -13,8 +13,9 @@ body {
 }
 
 #right_console {
-	background-color: #204a76; 
 	float: right;
+	position:fixed;
+	right: 0;
 	display: inline-block;
 }
 
@@ -23,10 +24,15 @@ body {
 }
 
 #in_console {
-	padding: 8px;
 }
 
 #console_nav {
 	display: block;
 	background-color: gray;
+	padding: 3px;
+}
+
+#console_iframe {
+	width: 100%;
+	height: 100vh;
 }
