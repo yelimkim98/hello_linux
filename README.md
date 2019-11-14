@@ -12,8 +12,11 @@
 
    ...(생략)...
    build
-   WebContent<br>
+   
+   WebContent
+   
 	META-INF
+	
 	WEB-INF
 
 2. git repository를 보면 WebContent 라는 폴더가 있는데,
