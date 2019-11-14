@@ -12,13 +12,13 @@
 
    ...(생략)...
    
-   build
+         build
    
-   WebContent
+         WebContent
    
-          META-INF
+              META-INF
 	
-          WEB-INF
+              WEB-INF
 
 2. git repository를 보면 WebContent 라는 폴더가 있는데,
    Eclipse에서 생성한 프로젝트의 WebContent와 비교해보면
