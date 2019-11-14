@@ -12,7 +12,7 @@
 
    ...(생략)...
    build
-   WebContent
+   WebContent<br>
 	META-INF
 	WEB-INF
 
