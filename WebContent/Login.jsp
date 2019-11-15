@@ -27,7 +27,7 @@
 		$(document).ready(function(){
 			// id 입력창이 포커싱될 때
 			$('#id_input').focus(function(){
-				$('#id_input_mom').css('border-color', 'rgb(40,60,80)');
+				$('#id_input_mom').css('border-color', 'rgb(40,80,120)');
 			})
 			// id 입력창 포커싱이 풀렸을 때
 			$('#id_input').blur(function(){
@@ -35,7 +35,7 @@
 			})
 			// password 입력창이 포커싱될 때
 			$('#passwd_input').focus(function(){
-				$('#passwd_input_mom').css('border-color', 'rgb(40,60,80)');
+				$('#passwd_input_mom').css('border-color', 'rgb(40,80,120)');
 			})
 			// password 입력창 포커싱이 풀렸을 때
 			$('#passwd_input').blur(function(){
