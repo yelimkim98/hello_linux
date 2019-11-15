@@ -19,6 +19,7 @@
 			$('#command_input').css("width", (screenWidth - $('#last_line_header').width() - 16) + "px");
 			
 			$(window).resize(function(){
+				screenWidth = parent.screenWidth;
 				$('#command_input').css("width",
 					(screenWidth - $('#last_line_header').width() - 16) + "px");
 			})
