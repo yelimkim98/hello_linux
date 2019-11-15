@@ -28,18 +28,26 @@
 	  		crossorigin="anonymous">
 	</script>
 	<script>
+		var screenWidth;
 		$(document).ready(function(){
 			$('#right_console').css("width", ($(document).width() * 0.45)  + "px");
 			$('#left_lecture').css("width" , (($(document).width() - $('#right_console').width()) * 0.95) + "px");
 			
 			$('#left_lecture').css("height" , $(document).height() + "px");
 			$('#right_console').css("height", $(document).height() + "px");
+
+			// ifame 에 우측 창 크기 전달
+			screenWidth = $('#right_console').width(); 
 			
 			$(window).resize(function(){
 				$('#right_console').css("width", ($(document).width() * 0.45)  + "px");
 				$('#left_lecture').css("width" , (($(document).width() - $('#right_console').width()) * 0.95) + "px");
+				
+				// ifame 에 우측 창 크기 전달
+				screenWidth = $('#right_console').width(); 
 			})
-		})		
+			
+		})
 	</script>
 
 <!------------------------------------------------>
@@ -63,7 +71,8 @@
 		<div id="console_nav">
 			<%="<a href=\"LecViewDefault.jsp?lec=" + req + "\">▶접기</a>" %>
 		</div>
-		<iframe src="Shell.jsp" id="console_iframe" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 vspace=0>
+		<iframe src="Shell.jsp" id="console_iframe"
+				frameborder=0 framespacing=0 marginheight=0 marginwidth=0 vspace=0>
 			
 		</iframe>
 	</section>
