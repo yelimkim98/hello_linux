@@ -64,4 +64,9 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql
    ▼ MySQL Workbench 사용자 계정 생성/권한 부여 방법<br>
 https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E%90-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC-%EB%B0%A9%EB%B2%95
 
-6. 
+6. 테이블을 만든다
+
+          // 6-1 : member table 만들기
+          create table member (uid varchar(45) not null, name varchar(45) not null,passwd varchar(45) not null,birth_year int not null, birth_month int not null,birth_day int not null,email varchar(60) not null,sex varchar(10) not null,work varchar(60) not null,belong varchar(60) not null,date DATE not null, primary key(uid)) Engine=InnoDB;
+	  
+          // 6-2 : 
