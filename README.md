@@ -61,7 +61,7 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql
    Connection Name (커넥션 이름) : hellolinux-connection
    Default Schema(접속했을 때 사용할 ) : hellolinux
    
-   ▼ MySQL Workbench 사용자 계정 생성/권한 부여 방법
+   ▼ MySQL Workbench 사용자 계정 생성/권한 부여 방법<br>
 https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E%90-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC-%EB%B0%A9%EB%B2%95
 
 6. 
