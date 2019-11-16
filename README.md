@@ -4,7 +4,7 @@
 우리가 직접 작성한 코드만 올립니다.
 
 * 개발 환경
-Window 10, Tomcat 8, Eclipse IDE (2017, 2018)
+Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql
 
 * 코드 실행 방법
 
@@ -42,3 +42,21 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018)
 	         ..
 	         META-INF
 	         WEB-INF
+
+4. Mysql 에서 hellolinux 라는 데이터베이스(=스키마)를 만든다.
+         // cmd
+	 C:\> mysql -u root -p
+	 Enter Password: **********
+	 Welcom to the MySQL ...(이하 생략)...
+	 mysql> create database hellolinux;
+	 
+ 	 // Workbench에서 만드는 방법도 있음
+	 
+5. Username : hellolinux
+   password : ... (비밀임)
+   계정을 만들고, hellolinux 데이터베이스에 대해서만 모든 권한을 가지게 한다.
+   
+   ▼ MySQL Workbench 사용자 계정 생성/권한 부여 방법
+https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E%90-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC-%EB%B0%A9%EB%B2%95
+
+6. 
