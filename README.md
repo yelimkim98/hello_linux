@@ -68,17 +68,17 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
 
           // 6-1 : member table 만들기
           create table hellolinux.member (
-	        uid varchar(45) not null,
-		name varchar(45) not null,
-		passwd varchar(45) not null,
-		birth_year int not null, 
-		birth_month int not null,
-		birth_day int not null,
-		email varchar(60) not null,
-		sex varchar(10) not null,
-		work varchar(60) not null,
-		belong varchar(60) not null,
-		date DATE not null, 
-		primary key(uid)) Engine=InnoDB;
+               uid varchar(45) not null,
+               name varchar(45) not null,
+               passwd varchar(45) not null,
+               birth_year int not null, 
+               birth_month int not null,
+               birth_day int not null,
+               email varchar(60) not null,
+               sex varchar(10) not null,
+               work varchar(60) not null,
+               belong varchar(60) not null,
+               date DATE not null, 
+               primary key(uid)) Engine=InnoDB;
 	  
           // 6-2 : 
