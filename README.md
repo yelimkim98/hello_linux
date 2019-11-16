@@ -80,7 +80,7 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                belong varchar(60) not null,
                date DATE not null, 
                primary key(uid)
-          ) Engine=InnoDB;
+          );
 	  
           // 6-2 : lecture_list 테이블 생성
           create table hellolinux.lecture_list (
@@ -90,3 +90,14 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                url varchar(100),
                primary key(chapter_id, lecture_id)
           );
+          
+          // 6-3 : visit_log 테이블 생성
+          create table hellolinux.visit_log (
+               vid int not null,
+               date DATE not null,
+               uid varchar(45),
+               url varchar(100) not null,
+               foreign key(uid) references hellolinux.member(uid)
+          );
+	  
+          // 6-4 : 
