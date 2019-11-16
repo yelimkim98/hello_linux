@@ -79,6 +79,14 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                work varchar(60) not null,
                belong varchar(60) not null,
                date DATE not null, 
-               primary key(uid)) Engine=InnoDB;
+               primary key(uid)
+          ) Engine=InnoDB;
 	  
-          // 6-2 : 
+          // 6-2 : lecture_list 테이블 생성
+          create table hellolinux.lecture_list (
+               chapter_id int not null,
+               lecture_id int not null,
+               like_cnt int not null default 0,
+               url varchar(100),
+               primary key(chapter_id, lecture_id)
+          );
