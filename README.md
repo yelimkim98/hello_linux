@@ -55,10 +55,10 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql
 	 
 5. 다음과 같은 계정을 만들고, hellolinux 데이터베이스에 대해서만 모든 권한을 가지게 한다.
    
-   Username : hellolinux
+   Username : hellolinux<br>
    password : ... (비밀임)
    
-   Connection Name (커넥션 이름) : hellolinux-connection
+   Connection Name (커넥션 이름) : hellolinux-connection<br>
    Default Schema(접속했을 때 사용할 ) : hellolinux
    
    ▼ MySQL Workbench 사용자 계정 생성/권한 부여 방법<br>
