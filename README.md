@@ -4,7 +4,7 @@
 우리가 직접 작성한 코드만 올립니다.
 
 * 개발 환경
-Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql
+Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql version 8.0.17, Mysql Workbench 8.0 CE
 
 * 코드 실행 방법
 
