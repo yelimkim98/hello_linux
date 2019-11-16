@@ -44,13 +44,14 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql
 	         WEB-INF
 
 4. Mysql 에서 hellolinux 라는 데이터베이스(=스키마)를 만든다.
+
          // cmd
-	 C:\> mysql -u root -p
-	 Enter Password: **********
-	 Welcom to the MySQL ...(이하 생략)...
-	 mysql> create database hellolinux;
-	 
- 	 // Workbench에서 만드는 방법도 있음
+         C:\> mysql -u root -p
+         Enter Password: **********
+         Welcom to the MySQL ...(이하 생략)...
+         mysql> create database hellolinux;
+         
+         // Workbench에서 만드는 방법도 있음
 	 
 5. 다음과 같은 계정을 만들고, hellolinux 데이터베이스에 대해서만 모든 권한을 가지게 한다.
    
