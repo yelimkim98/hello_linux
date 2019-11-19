@@ -14,8 +14,8 @@ public class Member {
 	private String work;
 	private String belong;
 	private Date date;
-	private boolean isOut;
-	private Date outDate;
+	private boolean isOut; // Å»ÅðÇÑ È¸¿øÀÌ¸é true, Å»ÅðÇÏÁö ¾ÊÀº È¸¿øÀÌ¸é false
+	private Date outDate; // Å»ÅðÇÑ È¸¿øÀÌ¸é Å»ÅðÇÑ ³¯Â¥ ¹× ½Ã°¢, Å»ÅðÇÏÁö ¾ÊÀº È¸¿øÀÌ¸é null
 	
 	public String getUid() {
 		return uid;
