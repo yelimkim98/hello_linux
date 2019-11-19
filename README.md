@@ -115,9 +115,12 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                lecture_id int not null,
                is_reply boolean not null default false,
                reply_target_id int,
+	       writer_uid varchar(45) not null,
+	       date DATE not null,
                primary key(comment_id),
                foreign key(chapter_id, lecture_id) references lecture_list(chapter_id, lecture_id),
-               foreign key(reply_target_id) references comment_log(comment_id)
+               foreign key(reply_target_id) references comment_log(comment_id),
+	       foreign key(writer_uid) references hellolinux.member(uid)
           );
 	  
           // 6-5 : login_log 테이블 생성
