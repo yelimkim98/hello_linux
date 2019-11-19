@@ -15,4 +15,17 @@ public class MemberDAO {
 	public boolean login(String uid, String passwd) {
 		return false;
 	}
+	
+	public Member getMemberByUid(String uid) {
+		// id로 회원찾기
+		Member member = new Member();
+		
+		return member;
+	}
+	
+	public Member getMemberByEmail(String email) {
+		Member member = new Member();
+		
+		return member;
+	}
 }
