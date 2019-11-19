@@ -1,5 +1,9 @@
 package helloLinux.log;
 
-public class LogoutLog {
+import java.sql.Date;
 
+public class LogoutLog {
+	private int id;
+	private String uid;
+	private Date date;
 }
