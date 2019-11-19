@@ -29,7 +29,7 @@
 	    	<ul class="right-ul">
 	       		<li>ABOUT</li>
 	       		<li><a href="Login.jsp">LOGIN</a></li>
-	       		<li>회원가입</li>
+	       		<li><a href="Join.jsp">회원가입</a></li>
 	        </ul>
         </nav>
         <div align="center">
