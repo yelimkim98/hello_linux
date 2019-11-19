@@ -89,7 +89,8 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                is_out boolean,
                out_date DATE,
                date DATE not null, 
-               primary key(uid)
+               primary key(uid),
+               unique key(email)
           );
 	  
           // 6-2 : lecture_list 테이블 생성
