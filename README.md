@@ -43,7 +43,8 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql version 8.0.17, Mysql Workb
 	         META-INF
 	         WEB-INF
 
-4. Mysql 에서 hellolinux 라는 데이터베이스(=스키마)를 만든다.
+4. Mysql을 Developer Default로 설치하고,
+   Mysql 에서 hellolinux 라는 데이터베이스(=스키마)를 만든다.
 
          // cmd
          C:\> mysql -u root -p
@@ -129,3 +130,8 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                primary key(id),
                foreign key(uid) references hellolinux.member(uid)
           );
+
+7. C:\Program Files (x86)\MySQL\Connector J 8.0 폴더에 있는 mysql-connector-java-8.0.17.jar 라는 이름의 파일을 복사(copy)하여,
+   이클립스의 프로젝트의 WebContent\WEB-INF\lib 에 붙여넣기(paste)한다.
+
+8. 
