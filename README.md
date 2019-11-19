@@ -76,21 +76,19 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
 
           // 6-1 : member table 만들기
           create table hellolinux.member (
-               uid varchar(45) not null,
+               email varchar(60) not null,
                name varchar(45) not null,
                passwd varchar(45) not null,
                birth_year int not null, 
                birth_month int not null,
                birth_day int not null,
-               email varchar(60) not null,
                sex varchar(10) not null,
                work varchar(60) not null,
                belong varchar(60) not null,
                is_out boolean,
                out_date DATE,
                date DATE not null, 
-               primary key(uid),
-               unique key(email)
+               primary key(email)
           );
 	  
           // 6-2 : lecture_list 테이블 생성
@@ -106,9 +104,9 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
           create table hellolinux.visit_log (
                vid int not null,
                date DATE not null,
-               uid varchar(45),
+               email varchar(60),
                url varchar(100) not null,
-               foreign key(uid) references hellolinux.member(uid)
+               foreign key(email) references hellolinux.member(email)
           );
 	  
           // 6-4 : comment_log 테이블 생성
@@ -118,30 +116,30 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                lecture_id int not null,
                is_reply boolean not null default false,
                reply_target_id int,
-               writer_uid varchar(45) not null,
+               writer_email varchar(60) not null,
                date DATE not null,
                primary key(comment_id),
                foreign key(chapter_id, lecture_id) references lecture_list(chapter_id, lecture_id),
                foreign key(reply_target_id) references comment_log(comment_id),
-               foreign key(writer_uid) references hellolinux.member(uid)
+               foreign key(writer_email) references hellolinux.member(email)
           );
 	  
           // 6-5 : login_log 테이블 생성
           create table login_log (
                id int AUTO_INCREMENT,
-               uid varchar(45) not null,
+               email varchar(60) not null,
                date DATE not null,
                primary key(id),
-               foreign key(uid) references hellolinux.member(uid)
+               foreign key(email) references hellolinux.member(email)
           );
 	  
           // 6-6 : 
           create table logout_log (
                id int AUTO_INCREMENT,
-               uid varchar(45) not null,
+               email varchar(60) not null,
                date DATE not null,
                primary key(id),
-               foreign key(uid) references hellolinux.member(uid)
+               foreign key(email) references hellolinux.member(email)
           );
 
 7. C:\Program Files (x86)\MySQL\Connector J 8.0 폴더에 있는 mysql-connector-java-8.0.17.jar 라는 이름의 파일을 복사(copy)하여,
