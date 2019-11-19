@@ -21,10 +21,17 @@ Window 10, Tomcat 8, Eclipse IDE (2017, 2018), Mysql version 8.0.17, Mysql Workb
               WEB-INF
 
 3. git repository의 WebContent 폴더에 있는 모든 파일과 폴더들을 복사하여<br>
-   이클립스 화면의 왼쪽 project explorer에서 WebContent 폴더 안에 붙여넣기한다.
+   이클립스 화면의 왼쪽 project explorer에서 WebContent 폴더 안에 붙여넣기한다.<br><br>
+   git repository의 src 폴더에 있는 것들을 복사하여<br>
+   이클립스 화면의 왼쪽 project explorer에서 src 폴더 안에 붙여넣기한다.
 
    // 2의 결과, 다음과 같이 프로젝트가 구성된다.
    
+         ...(생략)...
+         src
+	    hellolinux
+	                 ..(생략)
+	    ...
          ...(생략)...
          build
             WebContent
