@@ -14,6 +14,8 @@ public class Member {
 	private String work;
 	private String belong;
 	private Date date;
+	private boolean isOut;
+	private Date outDate;
 	
 	public String getUid() {
 		return uid;
@@ -80,5 +82,17 @@ public class Member {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public boolean isOut() {
+		return isOut;
+	}
+	public void setOut(boolean isOut) {
+		this.isOut = isOut;
+	}
+	public Date getOutDate() {
+		return outDate;
+	}
+	public void setOutDate(Date outDate) {
+		this.outDate = outDate;
 	}
 }
