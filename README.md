@@ -86,8 +86,8 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
                sex varchar(10) not null,
                work varchar(60) not null,
                belong varchar(60) not null,
-	       is_out boolean,
-	       out_date DATE,
+               is_out boolean,
+               out_date DATE,
                date DATE not null, 
                primary key(uid)
           );
