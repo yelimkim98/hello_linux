@@ -8,17 +8,6 @@
     <link type="text/css" rel="stylesheet" href="/temp.css">
     <link rel="shortcut icon" type="image/x-icon" href="home/logo.png"/>
     <title>HELLO UNIX</title>
-    
-	<script>
-		// 텍스트영역 클릭시 테두리 색 변경
-		/*
-		var redNow = 1;
-		function highlight(cell) {
-	        redNow == 1 ? redNow = 0 : redNow.style.borderColor = "white";
-	        redNow = cell;
-	        cell.style.borderColor = "green";
-	    }*/
-	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 	  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	  		crossorigin="anonymous">
