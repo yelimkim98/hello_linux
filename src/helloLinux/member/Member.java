@@ -3,13 +3,12 @@ package helloLinux.member;
 import java.sql.Date;
 
 public class Member {
-	private String uid;
+	private String email;
 	private String name;
 	private String passwd;
 	private int birth_year;
 	private int birth_month;
 	private int birth_day;
-	private String email;
 	private String sex;
 	private String work;
 	private String belong;
@@ -17,11 +16,11 @@ public class Member {
 	private boolean isOut; // Å»ÅðÇÑ È¸¿øÀÌ¸é true, Å»ÅðÇÏÁö ¾ÊÀº È¸¿øÀÌ¸é false
 	private Date outDate; // Å»ÅðÇÑ È¸¿øÀÌ¸é Å»ÅðÇÑ ³¯Â¥ ¹× ½Ã°¢, Å»ÅðÇÏÁö ¾ÊÀº È¸¿øÀÌ¸é null
 	
-	public String getUid() {
-		return uid;
+	public String getEmail() {
+		return email;
 	}
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getName() {
 		return name;
@@ -52,12 +51,6 @@ public class Member {
 	}
 	public void setBirth_day(int birth_day) {
 		this.birth_day = birth_day;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getSex() {
 		return sex;
