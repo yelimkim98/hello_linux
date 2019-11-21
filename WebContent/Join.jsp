@@ -7,6 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="css/Join.css" />
 	<link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="shortcut icon" type="image/x-icon" href="home/img/logo.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+	</style>
     <title>HELLO UNIX</title>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 	  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -175,17 +181,13 @@
 		<form name="join" method="post" action="UserControl.jsp" onsubmit="return checkForm();">
 			<input type="hidden" name="action" value="new">
 			<a href="Home.jsp" class="title">HELLO LINUX</a>
-			<br><br>
 			<input type="text" name="name" id="name" placeholder="이름" maxlength="40">
-			<br><br>
 			<input type="text" name="email" id="email" placeholder="이메일" maxlength="40">
-			<br><br>
 			<input type="password" name="passwd" id="pswd" placeholder="비밀번호" onchange="passwdCheckMsg();" size=15 maxlength="20">
-			<br><br>
 			<input type="password" id="pswdCk" placeholder="비밀번호 확인" onchange="passwdCheckMsg();" size=15 maxlength="20">
 			<span id="ckMsg"></span>
 			<br><br>
-			생년월일<br>
+			<div class="radio_title">생년월일</div>
 			<select name="birth_year" class="birth" id="birth_y">
 				<option value="1998">1998</option>
 				<option value="1999">1999</option>
@@ -205,17 +207,17 @@
 			</select>
 			일
 			<br><br>
-			<div id="sex">성별<br></div>
-				남<input type="radio" name="sex" value="male"> &nbsp;
-				여<input type="radio" name="sex" value="female">
+			<div id="sex" class="radio_title">성별<br></div>
+				<label>남</label><input type="radio" name="sex" value="male"> &nbsp;
+				<label>여</label><input type="radio" name="sex" value="female">
 			<br><br>
-		 	<div id="work">직업<br></div>
+		 	<div id="work" class="radio_title">직업<br></div>
 			 	학생<input type="radio" name="work" value="student" onClick="this.form.work_etc.disabled=true">&nbsp;
 				무직<input type="radio" name="work" value="none" onClick="this.form.work_etc.disabled=true">
 				직접입력<input type="radio" name="work" value="work_etc" onClick="this.form.work_etc.disabled=false">
 				<input type="text" name="work_etc" id="work_etc" placeholder="직업" size=20>
 		 	<br><br>
-			<div id="belong">소속<br></div>
+			<div id="belong" class="radio_title">소속<br></div>
 				없음<input type="radio" name="belong" value="none" onClick="this.form.belong_etc.disabled=true">&nbsp;
 				직접입력<input type="radio" name="belong" value="belong_etc" onClick="this.form.belong_etc.disabled=false">
 			 	<input type="text" name="belong_etc" id="belong_etc" placeholder="학교명 또는 회사명" size=20>

@@ -64,7 +64,7 @@
 				  <tr class="bottom">
 					  	<td><a href="#"> 아이디 찾기
 					  	<td><a href="#"> 비밀번호 찾기
-				  		<td><a href="#"> 회원가입
+				  		<td><a href="Join.jsp"> 회원가입
 				  </tr>
 				  <tr>
 				  		<td colspan="3">Copyright ⓒ 2016-2019 Hello Linux</td>

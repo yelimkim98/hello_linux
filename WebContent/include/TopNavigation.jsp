@@ -94,5 +94,5 @@
 <ul class="top-navigation right-ul">
 	<li class="top-navigation">ABOUT</li>
  	<li class="top-navigation"><a href="Login.jsp">LOGIN</a></li>
- 	<li class="top-navigation">회원가입</li>
+ 	<li class="top-navigation"><a href="Join.jsp">회원가입</a></li>
 </ul>
