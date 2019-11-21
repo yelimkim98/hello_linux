@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/Join.css" />
+	<link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="shortcut icon" type="image/x-icon" href="home/img/logo.png"/>
     <title>HELLO UNIX</title>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -13,27 +14,32 @@
 	</script>
 	<script>
 		window.onload = function(){
-			passwordCk();
+			document.getElementById("work_etc").disabled = true;
+			document.getElementById("belong_etc").disabled = true;
+			$("#ckMsg").css("display", "none");
 		}
 		
-		/******************** 비밀번호 확인 함수 ********************/
+		/******************** 비밀번호와 비밀번호 확인 창 입력이 같은지 알려주는 함수 ********************/
 		
-		function passwordCk(){
+		function isPasswdEqualPasswdCheck(){
 			var pswd = $("#pswd");
 			var pswdCk = $("#pswdCk");
-			var ckMsg = document.getElementById("ckMsg");
-			if(pswd.val() == ""){
+			/*var ckMsg = document.getElementById("ckMsg");
+			if(pswd.val() == ""){ 
 				ckMsg.innerHTML="<font color='red'>* 필수 정보입니다.</font>";
 			}
-			else if(pswd.val() != pswdCk.val()){
-				ckMsg.innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
+			else */
+			if(pswd.val() != pswdCk.val()){
+				return false;
+				//ckMsg.innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
 			}
-			else{
-				ckMsg.innerHTML="<font color='green'>비밀번호가 일치합니다.</font>";	
+			else {
+				return true;
+				//
 			}
 		}
 		
-		/*******************************************************/
+		/****************************************************************************/
 		
 		/**************** form 검사 통과해야 submit *****************/
 		
@@ -45,23 +51,119 @@
 			
 			if(!name.value){
 				name.focus();
-				name.select();
 				return false;
 			}
 			else if(!email.value){
 				email.focus();
-				email.select();
 				return false
 			}
 			else if(!passwd.value){
 				passwd.focus();
-				passwd.select();
 				return false;
 			}
 			else if(!passwdCheck.value){
 				passwdCheck.focus();
-				passwdCheck.select();
 				return false;
+			}
+			else if (!isPasswdEqualPasswdCheck()){
+				passwd.focus();
+				return false;
+			}
+			else if($(':radio[name="sex"]:checked').length < 1){
+			// '성별' 선택지가 아무것도 선택되어있지 않은경우
+				var sex = document.getElementById("sex");
+				sex.scrollIntoView(); // id="sex" 태그가 있는 위치로 이동 
+				
+				// '성별' 글자 깜빡이기 효과
+				var cnt = 0;
+				var sexAnimation = setInterval(function (){
+					if($("#sex").css("color") == "rgb(255, 0, 0)"){
+						$("#sex").css("color", "rgb(0, 0, 0)");
+					} else {
+						$("#sex").css("color", "rgb(255, 0, 0)");
+					}
+					cnt++;
+					if(cnt > 9) clearInterval(sexAnimation);
+				}, 250);
+				
+				return false;
+			}
+			
+		/*********** '직업' 선택지가 아무것도 선택되어있지 않은경우 ************/
+			if($('input:radio[name="work"]:checked').length < 1){
+				
+				
+					var work = document.getElementById("work");
+					work.scrollIntoView(); // id="work" 태그가 있는 위치로 이동 
+					
+					// '직업' 글자 깜빡이기 효과
+					var cnt = 0;
+					var workAnimation = setInterval(function (){
+						if($("#work").css("color") == "rgb(255, 0, 0)"){
+							$("#work").css("color", "rgb(0, 0, 0)");
+						} else {
+							$("#work").css("color", "rgb(255, 0, 0)");
+						}
+						cnt++;
+						if(cnt > 9) clearInterval(workAnimation);
+					}, 250);
+					
+					return false;
+			}
+			else if($('input:radio[name="work"]:checked').val() == "work_etc"){
+				// 직업 선택지에서 '직접입력'이 선택되었는데 직접입력 텍스트박스가 비어있는 경우
+				var workEtc = document.getElementById('work_etc');
+				if(!workEtc.value) {
+					workEtc.focus();
+					return false;
+				}
+			}
+		/************************************************************/
+			
+		/************ '소속' 선택지가 아무것도 선택되어있지 않은경우 ***************/
+			if($(':radio[name="belong"]:checked').length < 1){
+				
+					var belong = document.getElementById("belong");
+					belong.scrollIntoView(); // id="belong" 태그가 있는 위치로 이동 
+					
+					// '소속' 글자 깜빡이기 효과
+					var cnt = 0;
+					var belongAnimation = setInterval(function (){
+						if($("#belong").css("color") == "rgb(255, 0, 0)"){
+							$("#belong").css("color", "rgb(0, 0, 0)");
+						} else {
+							$("#belong").css("color", "rgb(255, 0, 0)");
+						}
+						cnt++;
+						if(cnt > 9) clearInterval(belongAnimation);
+					}, 250);
+					
+					return false;
+			}
+			else if($(':radio[name="belong"]:checked').val() == "belong_etc"){
+				var belongEtc = document.getElementById('belong_etc');
+				if(!belongEtc.value) {
+					belongEtc.focus();
+					return false;
+				}
+			}
+		/************************************************************/
+			
+			return true;
+		}
+		
+		function passwdCheckMsg(){
+			var ckMsg = document.getElementById("ckMsg");
+			
+			if(document.getElementById("pswd").value == "" ||  document.getElementById("pswdCk").value == "") {
+				$("#ckMsg").css("display", "none");
+			}
+			else if(!isPasswdEqualPasswdCheck()){
+				$("#ckMsg").css("display", "inline");
+				ckMsg.innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
+			} else {
+				$("#ckMsg").css("display", "inline");
+				ckMsg.innerHTML="<font color='green'>비밀번호가 일치합니다.</font>";
 			}
 		}
 	</script>
@@ -78,10 +180,10 @@
 			<br><br>
 			<input type="text" name="email" id="email" placeholder="이메일" maxlength="40">
 			<br><br>
-			<input type="password" name="passwd" id="pswd" placeholder="비밀번호" size=15 maxlength="20">
+			<input type="password" name="passwd" id="pswd" placeholder="비밀번호" onchange="passwdCheckMsg();" size=15 maxlength="20">
 			<br><br>
-			<input type="password" id="pswdCk" placeholder="비밀번호 확인" size=15 maxlength="20"
-				onchange="passwordCk()">&nbsp;<span id="ckMsg"></span>
+			<input type="password" id="pswdCk" placeholder="비밀번호 확인" onchange="passwdCheckMsg();" size=15 maxlength="20">
+			<span id="ckMsg"></span>
 			<br><br>
 			생년월일<br>
 			<select name="birth_year" class="birth" id="birth_y">
@@ -103,25 +205,25 @@
 			</select>
 			일
 			<br><br>
-			성별<br>
-			남<input type="radio" name="sex" value="male"> &nbsp;
-			여<input type="radio" name="sex" value="female">
+			<div id="sex">성별<br></div>
+				남<input type="radio" name="sex" value="male"> &nbsp;
+				여<input type="radio" name="sex" value="female">
 			<br><br>
-		 	직업<br>
-		 	학생<input type="radio" name="work" value="student" onClick="this.form.work_etc.disabled=true">&nbsp;
-			무직<input type="radio" name="work" value="none" onClick="this.form.work_etc.disabled=true">&nbsp;
-			직접입력<input type="radio" name="work" value="etc" onClick="this.form.work_etc.disabled=false">
-			<input type="text" name="work_etc" placeholder="직업" size=20>
+		 	<div id="work">직업<br></div>
+			 	학생<input type="radio" name="work" value="student" onClick="this.form.work_etc.disabled=true">&nbsp;
+				무직<input type="radio" name="work" value="none" onClick="this.form.work_etc.disabled=true">
+				직접입력<input type="radio" name="work" value="work_etc" onClick="this.form.work_etc.disabled=false">
+				<input type="text" name="work_etc" id="work_etc" placeholder="직업" size=20>
 		 	<br><br>
-			소속<br>
-			없음<input type="radio" name="belong" value="none" onClick="this.form.belong_etc.disabled=true">&nbsp;
-			직접입력<input type="radio" name="belong" value="etc" onClick="this.form.belong_etc.disabled=false">
-		 	<input type="text" name="belong_etc" placeholder="학교명/회사명" size=20>
+			<div id="belong">소속<br></div>
+				없음<input type="radio" name="belong" value="none" onClick="this.form.belong_etc.disabled=true">&nbsp;
+				직접입력<input type="radio" name="belong" value="belong_etc" onClick="this.form.belong_etc.disabled=false">
+			 	<input type="text" name="belong_etc" id="belong_etc" placeholder="학교명 또는 회사명" size=20>
 		 	<br><br>
 			<input type="submit" name="submit" value="가입하기">
 			<br><br>
-			Copyright ⓒ 2016-2019 Hello Linux
 		</form>
 	</div>
+	<footer>Copyright ⓒ 2016-2019 Hello Linux</footer>
 </body>
 </html>

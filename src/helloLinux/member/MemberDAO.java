@@ -39,6 +39,32 @@ public class MemberDAO {
 		}
 	}
 	
+	public boolean isEmailAlreadyExist(String email) {
+		connect();
+		
+		String sql = "select * from hellolinux.member where email=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			ResultSet ret = pstmt.executeQuery();
+			boolean isExist = ret.next();
+			
+			if(!isExist) {
+				ret.close();
+				return false;
+			}
+			ret.close();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		
+		return true;
+	}
+	
 	public boolean addMember(Member member) {
 		// 회원가입
 		connect();
