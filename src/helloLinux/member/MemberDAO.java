@@ -107,15 +107,35 @@ public class MemberDAO {
 		return false;
 	}
 	
-	public boolean login(String uid, String passwd) {
-		return false;
-	}
-	
-	public Member getMemberByUid(String uid) {
-		// id로 회원찾기
-		Member member = new Member();
+	public boolean login(String email, String passwd) {
+		connect();
 		
-		return member;
+		String sql = "select * from hellolinux.member "
+				+ "where email=? and passwd=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			pstmt.setString(2, passwd);
+			
+			ResultSet ret = pstmt.executeQuery();
+			
+			// return값이 boolean이면 회원정보는 어떻게 전달하지??
+			// => 입력받은 값이 있으므로 전달할 필요가 없다.
+			if(ret.next()) { // 데이터가 하나만 있으므로 ret.next()를 한번만 실행
+				ret.close();
+				return true;
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		
+		} finally {
+			disconnect();
+		}
+		
+		return false;
 	}
 	
 	public Member getMemberByEmail(String email) {

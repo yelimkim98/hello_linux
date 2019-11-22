@@ -36,7 +36,8 @@
 </head>
 <body>
 	<div id="login_main" align = center>
-		<form method="post" action="login.jsp" name="login">
+		<form method="post" action="UserControl.jsp" name="login">
+		<input type="hidden" name="action" value="login">
 			  <table align="center" border="1">
 				  <tr>
 					  	<td colspan="3">
@@ -44,8 +45,8 @@
 					  	</td>
 				  </tr>
 				  <tr>
-					  	<td id="id_input_mom" colspan="3" onmousedown="highlight(this);">
-					  		<input type="text" name="userid" id="id_input" size=10 placeholder="아이디">
+					  	<td id="email_input_mom" colspan="3" onmousedown="highlight(this);">
+					  		<input type="text" name="email" id="email_input" size=10 placeholder="이메일">
 					  	</td>
 				  </tr>
 				  <tr>
@@ -55,8 +56,8 @@
 				  </tr>
 				  <tr> 
 					    <td colspan="3" align="center"> 
-					        <input type="submit" name="Submit" value="로그인">
-					    </td>	
+					        <input type="submit" name="submit" value="로그인">
+					    </td>
 				  </tr>
 				  <tr>
 				  		<td colspan="3"><hr></td>
