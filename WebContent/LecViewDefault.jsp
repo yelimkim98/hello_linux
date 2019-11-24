@@ -93,8 +93,18 @@
 					<%} else if(req.equals("2-3")) { %>
 						<%@include file="lecture_text_files/Ch2-3.jsp" %>
 					<%} else if(req.equals("2-4")){ %>
-						
-					<% }
+						<%@include file="lecture_text_files/Ch2-4.jsp" %>
+					<%} else if(req.equals("2-5")){ %>
+						<%@include file="lecture_text_files/Ch2-5.jsp" %>
+					<%} else if(req.equals("2-6")){ %>
+						<%@include file="lecture_text_files/Ch2-6.jsp" %>
+					<%} else if(req.equals("2-7")){ %>
+						<%@include file="lecture_text_files/Ch2-7.jsp" %>
+					<%} else if(req.equals("2-8")){ %>
+						<%@include file="lecture_text_files/Ch2-8.jsp" %>
+					<%} else if(req.equals("2-9")){ %>
+						<%@include file="lecture_text_files/Ch2-9.jsp" %>
+					<%}
 			}%>
 		</article>
 	</section>

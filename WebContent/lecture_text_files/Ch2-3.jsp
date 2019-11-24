@@ -1,60 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
 </head>
 <h1>pwd 명령어</h1>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
-pwd 설명<br>
+pwd는 print working directory의 약자로, 현재의 디렉토리를 출력합니다.<br><br>
+<img src="img/ch2-3/pwd01.png"><br><br>
