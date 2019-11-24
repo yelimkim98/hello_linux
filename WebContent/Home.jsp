@@ -14,6 +14,39 @@
 		body {
 			font-family: 'Nanum Gothic Coding', monospace;
 		}
+		.ch1, .ch2, .ch3 {
+		width: 150px;
+		height: 150px;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 150px;
+        margin: 30px;
+        background-color: #000000;
+        opacity: 0.2;
+        vertical-align: middle;
+        padding: 50px;
+        }
+        .ch1:hover{
+        opacity: 1.0;
+        background-color: #fb9f1e;
+        }
+        .ch2:hover{
+        opacity: 1.0;
+        background-color: #fb9f1e;
+        }
+        .ch3:hover{
+        opacity: 1.0;
+        background-color: #fb9f1e;
+        }
+        td{
+        vertical-align: middle;
+        text-align: center;
+        }
+        .page_des{
+        font-size: 20px;
+        line-height: 50px;
+        }
 	</style>
 	
 </head>
@@ -35,16 +68,34 @@
         <div align="center">
             <span>HELLO</span>
             <span class="linux">LINUX </span>
-            <p>LEARN LINUX IN BETTER WAY AND LEVEL UP YOUR CAREER</p>
+            <p class="page_des">LEARN LINUX IN BETTER WAY AND LEVEL UP YOUR CAREER</p>
             <div class="lecture_list"><a href="LectureList.jsp">go to learn</a></div>
         </div>
     </header>
     <section>
-	    <div class="site-description">
-	    	사이트 설명 사이트 설명 사이트 설명입니다.<br><br><br> 
-	    	사이트 설명 사이트설명<br><br><br>
-	    	site description site description<br><br><br><br>
-	    	<br>
+	    <div class="site-description" align="center">
+	    <table>
+	    <tr>
+	    <td>
+	    <p class="ch1">
+	    Chapter1<br>
+	    리눅스 <br>소개
+	    </p>
+	    </td>
+	    <td>
+	    <p class="ch2">
+	    Chapter2<br>
+	    기본 <br>명령어
+	    </p>
+	    </td>
+	    <td>
+	    <p class="ch3">
+	    Chapter3<br>
+	    vi <br>사용하기
+	    </p>
+	    </td>
+	    </tr>
+	    </table>
 	    </div>
     </section>
     <footer>
