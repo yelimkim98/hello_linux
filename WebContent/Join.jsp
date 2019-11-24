@@ -23,7 +23,27 @@
 			document.getElementById("work_etc").disabled = true;
 			document.getElementById("belong_etc").disabled = true;
 			$("#ckMsg").css("display", "none");
+			
+		/****************** 생년월일의 select box 세팅 *********************************/
+		var date = new Date();
+		var year = date.getFullYear();
+		var selectYear = document.getElementById("birth_y");
+		var selectMonth = document.getElementById("birth_m");
+		var selectDay = document.getElementById("birth_d");
+		var yIndex = 0;
+		var mIndex = 0;
+		var dIndex = 0;
+		
+		for(var i=year-22;i<=year;i++){
+			selectYear.add(new Option(i), yIndex++);
+		}		
+		for(var j=1;j<=12;j++){
+			selectMonth.add(new Option(j), mIndex++);
 		}
+		for(var k=1;k<=31;k++){
+			selectDay.add(new Option(k), dIndex++);
+		}
+	}
 		
 		/******************** 비밀번호와 비밀번호 확인 창 입력이 같은지 알려주는 함수 ********************/
 		
@@ -189,21 +209,15 @@
 			<br><br>
 			<div class="radio_title">생년월일</div>
 			<select name="birth_year" class="birth" id="birth_y">
-				<option value="1998">1998</option>
-				<option value="1999">1999</option>
-				<option value="2000">2000</option>
+				<option>선택하세요</option>
 			</select>
 			년
 			<select name="birth_month" class="birth" id="birth_m">
-				<option value="1">01</option>
-				<option value="2">02</option>
-				<option value="3">03</option>
+				<option>선택하세요</option>
 			</select>
 			월
 			<select name="birth_day" class="birth" id="birth_d">
-				<option value="1">01</option>
-				<option value="2">02</option>
-				<option value="3">03</option>
+				<option>선택하세요</option>
 			</select>
 			일
 			<br><br>
