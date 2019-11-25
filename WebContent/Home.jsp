@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/Home.css" />
+	<link rel="stylesheet" type="text/css" href="css/Home.css?after" />
 	<link rel="stylesheet" type="text/css" href="css/footer.css" />
 	<meta charset="UTF-8">
 	<title>Hello Linux</title>
@@ -14,41 +14,8 @@
 		body {
 			font-family: 'Nanum Gothic Coding', monospace;
 		}
-		.ch1, .ch2, .ch3 {
-		width: 150px;
-		height: 150px;
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
-        border-radius: 150px;
-        margin: 30px;
-        background-color: #000000;
-        opacity: 0.2;
-        vertical-align: middle;
-        padding: 50px;
-        }
-        .ch1:hover{
-        opacity: 1.0;
-        background-color: #fb9f1e;
-        }
-        .ch2:hover{
-        opacity: 1.0;
-        background-color: #fb9f1e;
-        }
-        .ch3:hover{
-        opacity: 1.0;
-        background-color: #fb9f1e;
-        }
-        td{
-        vertical-align: middle;
-        text-align: center;
-        }
-        .page_des{
-        font-size: 20px;
-        line-height: 50px;
-        }
+		
 	</style>
-	
 </head>
 <body>
     <header>
