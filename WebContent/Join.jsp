@@ -36,7 +36,7 @@
 		
 		for(var i=year-22;i<=year;i++){
 			selectYear.add(new Option(i), yIndex++);
-		}		
+		}
 		for(var j=1;j<=12;j++){
 			selectMonth.add(new Option(j), mIndex++);
 		}
@@ -50,18 +50,12 @@
 		function isPasswdEqualPasswdCheck(){
 			var pswd = $("#pswd");
 			var pswdCk = $("#pswdCk");
-			/*var ckMsg = document.getElementById("ckMsg");
-			if(pswd.val() == ""){ 
-				ckMsg.innerHTML="<font color='red'>* 필수 정보입니다.</font>";
-			}
-			else */
+
 			if(pswd.val() != pswdCk.val()){
 				return false;
-				//ckMsg.innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
 			}
 			else {
 				return true;
-				//
 			}
 		}
 		
@@ -93,6 +87,27 @@
 			}
 			else if (!isPasswdEqualPasswdCheck()){
 				passwd.focus();
+				return false;
+			}
+			else if( $("#birth_y option:selected").val() == '선택하세요' || 
+					 $("#birth_m option:selected").val() == '선택하세요' ||
+					 $("#birth_d option:selected").val() == '선택하세요' ){
+			// 생년월일 중 '선택하세요' 항목이 선택되어있는 경우
+				var birth = document.getElementById("birth");
+				birth.scrollIntoView(); // 생년월일 선택하는 곳이 있는 위치로  스크롤이동
+				
+				// '생년월일' 글자 깜빡이기 효과
+				var cnt = 0;
+				var sexAnimation = setInterval(function (){
+					if($("#birth").css("color") == "rgb(255, 0, 0)"){
+						$("#birth").css("color", "rgb(0, 0, 0)");
+					} else {
+						$("#birth").css("color", "rgb(255, 0, 0)");
+					}
+					cnt++;
+					if(cnt > 9) clearInterval(sexAnimation);
+				}, 250);
+				
 				return false;
 			}
 			else if($(':radio[name="sex"]:checked').length < 1){
@@ -207,7 +222,7 @@
 			<input type="password" id="pswdCk" placeholder="비밀번호 확인" onchange="passwdCheckMsg();" size=15 maxlength="20">
 			<span id="ckMsg"></span>
 			<br><br>
-			<div class="radio_title">생년월일</div>
+			<div id="birth" class="radio_title">생년월일</div>
 			<select name="birth_year" class="birth" id="birth_y">
 				<option>선택하세요</option>
 			</select>

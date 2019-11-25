@@ -45,14 +45,25 @@
 	  		crossorigin="anonymous">
 	</script>
 	<script>
+	
 		$(document).ready(function(){
-			
-			/*******  *******/
 			var h = window.innerHeight / 2;
 			
 			$('#lecture_list').css('top', h + 'px' );
 			$('#console').css('top', h + 'px' );
-			
+
+			// 페이지에 처음 접속했을 때 화면 크기에 따라서
+			// 목록 버튼과 실습창 버튼 보여줄지 말지
+			if( ( $(document).width() - $('#lecText').width() ) / 4 > 40){
+				$('#lecture_list').css('display', 'block');
+				$('#console').css('display', 'block');
+			}
+			else {
+				$('#lecture_list').css('display', 'none');
+				$('#console').css('display', 'none');
+			}
+
+			// 화면 크기가 변경됬을 때, 목록 버튼과 실습창 버튼을 보여줄지 말지
 			$(window).resize(function(){
 				if( ( $(document).width() - $('#lecText').width() ) / 4 > 40){
 					$('#lecture_list').css('display', 'block');

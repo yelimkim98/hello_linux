@@ -37,12 +37,12 @@
 				<li><a href="LecViewDefault.jsp?lec=2-1">2.1 ls 명령어</a></li>
 				<li><a href="LecViewDefault.jsp?lec=2-2">2.2 cd 명령어</a></li>
 				<li><a href="LecViewDefault.jsp?lec=2-3">2.3 pwd 명령어</a></li>
-				<li><a href="LecViewDefault.jsp?lec=2-4">2.4 touch 명령어</li>
-				<li><a href="LecViewDefault.jsp?lec=2-5">2.5 rm 명령어</li>
-				<li><a href="LecViewDefault.jsp?lec=2-6">2.6 mkdir 명령어</li>
-				<li><a href="LecViewDefault.jsp?lec=2-7">2.7 rmdir 명령어 </li>
-				<li><a href="LecViewDefault.jsp?lec=2-8">2.8 cp 명령어</li>
-				<li><a href="LecViewDefault.jsp?lec=2-9">2.9 mv 명령어</li>
+				<li><a href="LecViewDefault.jsp?lec=2-4">2.4 touch 명령어</a></li>
+				<li><a href="LecViewDefault.jsp?lec=2-5">2.5 rm 명령어</a></li>
+				<li><a href="LecViewDefault.jsp?lec=2-6">2.6 mkdir 명령어</a></li>
+				<li><a href="LecViewDefault.jsp?lec=2-7">2.7 rmdir 명령어 </a></li>
+				<li><a href="LecViewDefault.jsp?lec=2-8">2.8 cp 명령어</a></li>
+				<li><a href="LecViewDefault.jsp?lec=2-9">2.9 mv 명령어</a></li>
 			</ul>
 			<li>Ch3 : vi 사용하기</li>
 			<ul>
