@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
+
+<jsp:useBean id="sh" class="helloLinux.linux.Shell" scope="session" />
+<%
+	String input = request.getParameter("command_input");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +29,22 @@
 				$('#command_input').css("width",
 					(screenWidth - $('#last_line_header').width() - 16) + "px");
 			})
+			
+			$("#command_input").focus();
 		})
 	</script>
 	<!------------------------------------->
 </head>
 <body>
 	<form method="post" action="Shell.jsp" style="overflow:hidden">
+		<div id="history">
+			<% if(input != null) { %>
+					<%=	sh.shell(input) %>
+			<% } %>
+		</div>
 		<div id="last_line">
-			<span id="last_line_header">user1@centos:&nbsp</span>
-			<input name="command_input" type=text id="command_input" autofocus autocomplete="off" />
+			<span id="last_line_header">user@centos:</span>
+			<input name="command_input" type=text id="command_input" autocomplete="off" />
 		</div>
 	</form>
 </body>
