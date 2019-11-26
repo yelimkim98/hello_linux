@@ -93,6 +93,18 @@
 </a>
 <ul class="top-navigation right-ul">
 	<li class="top-navigation">ABOUT</li>
- 	<li class="top-navigation"><a href="Login.jsp">LOGIN</a></li>
- 	<li class="top-navigation"><a href="Join.jsp">회원가입</a></li>
+
+<%	boolean isLogined = false;
+	
+	if(session.getAttribute("email") != null) {
+		isLogined = true;
+	}
+	
+ 	if(isLogined == false) {%>
+   			<%="<li class=\"top-navigation\"><a href=\"Login.jsp\">LOGIN</a></li>" %>
+   			<%="<li class=\"top-navigation\"><a href=\"Join.jsp\">회원가입</a></li>" %>
+<%  } else { %>
+   			<%="<li class=\"top-navigation\"><a href=\"Logout.jsp\">LOGOUT</a></li>" %>
+   			<%="<li class=\"top-navigation\"><a>" + session.getAttribute("name") + " 님</a></li>" %>
+<%  } %>
 </ul>

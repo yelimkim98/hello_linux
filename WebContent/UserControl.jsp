@@ -67,8 +67,11 @@
 		String email = request.getParameter("email");
 		String passwd = request.getParameter("passwd");
 		
-		if(memberDAO.login(email, passwd)){ // 로그인 성공
+		member = memberDAO.login(email, passwd);
+		
+		if(member != null){ // 로그인 성공
 			session.setAttribute("email", email);
+			session.setAttribute("name", member.getName());
 			response.sendRedirect("Home.jsp");
 		} else { // 로그인 실패
 			response.sendRedirect("Login.jsp");

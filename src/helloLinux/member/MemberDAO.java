@@ -107,11 +107,12 @@ public class MemberDAO {
 		return false;
 	}
 	
-	public boolean login(String email, String passwd) {
+	public Member login(String email, String passwd) {
 		connect();
 		
+		Member m = null;
 		String sql = "select * from hellolinux.member "
-				+ "where email=? and passwd=?";
+				+ "where email=? and passwd=? and out_date is null";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -124,8 +125,19 @@ public class MemberDAO {
 			// return값이 boolean이면 회원정보는 어떻게 전달하지??
 			// => 입력받은 값이 있으므로 전달할 필요가 없다.
 			if(ret.next()) { // 데이터가 하나만 있으므로 ret.next()를 한번만 실행
+				m = new Member();
+				m.setEmail(ret.getString("email"));
+				m.setName(ret.getString("name"));
+				m.setPasswd("secret");
+				m.setBirth_year(ret.getInt("birth_year"));
+				m.setBirth_month(ret.getInt("birth_month"));
+				m.setBirth_day(ret.getInt("birth_day"));
+				m.setSex(ret.getString("sex"));
+				m.setWork(ret.getString("work"));
+				m.setBelong(ret.getString("belong"));
+				
 				ret.close();
-				return true;
+				return m;
 			}
 			
 		} catch(SQLException e) {
@@ -135,7 +147,7 @@ public class MemberDAO {
 			disconnect();
 		}
 		
-		return false;
+		return m;
 	}
 	
 	public Member getMemberByEmail(String email) {

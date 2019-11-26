@@ -21,6 +21,19 @@
 	<meta charset="UTF-8">
 	<title>Hello Linux Lecture</title>
 	
+<!---------------------- 한국어 웹폰트 적용 ------------------------>
+
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Nanum+Myeongjo&display=swap" rel="stylesheet">
+	<style>
+		article {
+			/* 본문(목차)에 폰트 적용 */
+			font-family: 'Nanum Myeongjo', serif;
+		}
+	</style>
+
+<!------------------------------------------------------------>
+	
+	
 <!------------- 영역을 좌우 절반으로 나누기 ---------------->
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -63,6 +76,10 @@
 						<%@include file="lecture_text_files/Ch2-2.jsp" %>
 				<% } else if(req.equals("2-3")) {%>
 						<%@include file="lecture_text_files/Ch2-3.jsp" %>
+				<% } else if(req.equals("2-4")) {%>
+						<%@include file="lecture_text_files/Ch2-4.jsp" %>
+				<% } else if(req.equals("2-5")) {%>
+						<%@include file="lecture_text_files/Ch2-4.jsp" %>
 				<% } %>
 			<% } %>
 		</article>

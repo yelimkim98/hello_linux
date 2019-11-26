@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
+
+<%
+boolean isLogined = false;
+
+if(session.getAttribute("email") != null) {
+	isLogined = true;
+} %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,8 +36,14 @@
 	    	</a>
 	    	<ul class="right-ul">
 	       		<li>ABOUT</li>
-	       		<li><a href="Login.jsp">LOGIN</a></li>
-	       		<li><a href="Join.jsp">회원가입</a></li>
+	       		<% if(isLogined == false) {%>
+	       			<%="<li><a href=\"Login.jsp\">LOGIN</a></li>" %>
+	       			<%="<li><a href=\"Join.jsp\">회원가입</a></li>" %>
+	       		<% } else { %>
+	       			<%="<li><a href=\"Logout.jsp\">LOGOUT</a></li>" %>
+	       			<%="<li><a>" + session.getAttribute("name") + " 님</a></li>" %>
+	       		<% } %>
+	       		
 	        </ul>
         </nav>
         <div align="center">
