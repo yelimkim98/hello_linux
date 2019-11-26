@@ -87,4 +87,25 @@
 	else if(action.equals("withdraw")){
 		
 	}
+/**************************************************************************************************/
+/****************************************계정찾기요청**************************************************/
+	else if(action.equals("find")){
+	
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String birthY = request.getParameter("birth_year");
+		String birthM = request.getParameter("birth_month");
+		String birthD = request.getParameter("birth_day");
+		
+		member = null;
+		
+		if(member != null){
+			response.sendRedirect("ResetPw.jsp");
+			//근데 findAccount.jsp에서 온 email을 어떻게 다시 resetPw.jsp에 보내지??
+		} else { // 계정찾기 실패
+			response.sendRedirect("FindAccount");
+			// 찾는 회원정보가 없다고 알림창 뜨게 하고싶음 ㅠㅜ
+		}
+	
+	}
 %>
