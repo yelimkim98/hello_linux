@@ -93,19 +93,31 @@
 	
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
-		String birthY = request.getParameter("birth_year");
-		String birthM = request.getParameter("birth_month");
-		String birthD = request.getParameter("birth_day");
+		int year = Integer.parseInt(request.getParameter("birth_year"));
+		int month = Integer.parseInt(request.getParameter("birth_month"));
+		int day = Integer.parseInt(request.getParameter("birth_day"));
 		
-		member = null;
-		
+		member = memberDAO.findAccount(name, email, year, month, day);
 		if(member != null){
 			response.sendRedirect("ResetPw.jsp");
-			//근데 findAccount.jsp에서 온 email을 어떻게 다시 resetPw.jsp에 보내지??
 		} else { // 계정찾기 실패
-			response.sendRedirect("FindAccount");
-			// 찾는 회원정보가 없다고 알림창 뜨게 하고싶음 ㅠㅜ
+			response.sendRedirect("FindAccount.jsp");
+//			out.println("<script>alert('없는 계정입니다.');</script>");
 		}
 	
+	}
+/**************************************************************************************************/
+/**************************************비밀번호 재설정**************************************************/
+	else if(action.equals("reset")){
+		String email = request.getParameter("email");
+		String passwd = request.getParameter("passwd");
+		boolean success = memberDAO.resetPw(email, passwd);
+		if(!success){
+			//error
+		}
+		else {
+			response.sendRedirect("Login.jsp");
+			out.println("<script>alert('비밀번호가 성공적으로 변경되었습니다.');</script>");
+		}
 	}
 %>

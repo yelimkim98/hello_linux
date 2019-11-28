@@ -6,7 +6,7 @@ public class MemberDAO {
 	
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
-	/* MySQL ¿¬°á Á¤º¸ */
+	/* MySQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 	private String jdbc_driver = "com.mysql.jdbc.Driver"; 
 	private String jdbc_url = //"jdbc:mysql://127.0.0.1:3306/hellolinux"; 
 "jdbc:mysql://localhost/hellolinux?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -66,7 +66,7 @@ public class MemberDAO {
 	}
 	
 	public boolean addMember(Member member) {
-		// È¸¿ø°¡ÀÔ
+		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		connect();
 		
 		String sql = "insert into hellolinux.member"
@@ -75,7 +75,7 @@ public class MemberDAO {
 				+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
-			pstmt = conn.prepareStatement(sql); // ¿©±â¼­ ¿À·ù³². connect ½ÇÆÐÇØ¼­ connÀÌ nullÀÎµí
+			pstmt = conn.prepareStatement(sql); // ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. connect ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ connï¿½ï¿½ nullï¿½Îµï¿½
 			pstmt.setString(1, member.getEmail());
 			pstmt.setString(2, member.getName());
 			pstmt.setString(3, member.getPasswd());
@@ -103,7 +103,7 @@ public class MemberDAO {
 	}
 	
 	public boolean deleteMember(Member member) {
-		// Å»ÅðÇÑ È¸¿ø Á¤º¸ Á¦°ÅÇÒ ¶§ »ç¿ë
+		// Å»ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 		return false;
 	}
 	
@@ -122,9 +122,9 @@ public class MemberDAO {
 			
 			ResultSet ret = pstmt.executeQuery();
 			
-			// return°ªÀÌ booleanÀÌ¸é È¸¿øÁ¤º¸´Â ¾î¶»°Ô Àü´ÞÇÏÁö??
-			// => ÀÔ·Â¹ÞÀº °ªÀÌ ÀÖÀ¸¹Ç·Î Àü´ÞÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
-			if(ret.next()) { // µ¥ÀÌÅÍ°¡ ÇÏ³ª¸¸ ÀÖÀ¸¹Ç·Î ret.next()¸¦ ÇÑ¹ø¸¸ ½ÇÇà
+			// returnï¿½ï¿½ï¿½ï¿½ booleanï¿½Ì¸ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¶»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½??
+			// => ï¿½Ô·Â¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ä°¡ ï¿½ï¿½ï¿½ï¿½.
+			if(ret.next()) { // ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ret.next()ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				m = new Member();
 				m.setEmail(ret.getString("email"));
 				m.setName(ret.getString("name"));
@@ -154,5 +154,61 @@ public class MemberDAO {
 		Member member = new Member();
 		
 		return member;
+	}
+	public Member findAccount(String name, String email, int year, int month, int day) {
+		connect();
+		
+		Member m = null;
+		String sql = "select * from hellolinux.member "
+				+ "where name = ? and email = ? "
+				+ "and birth_year = ? and birth_month = ? and"
+				+ "birth_day = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, name);
+			pstmt.setString(2, email);
+			pstmt.setInt(3, year);
+			pstmt.setInt(4, month);
+			pstmt.setInt(5, day);
+			
+			ResultSet ret = pstmt.executeQuery();
+			
+			if(ret.next()) {
+				m = new Member();
+				m.setEmail(ret.getString("email"));
+				ret.close();
+				return m;
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		
+		} finally {
+			disconnect();
+		}
+		
+		return m;
+	}
+	public boolean resetPw(String email, String passwd) {
+		connect();
+		
+		String sql = "update hellolinux.member set passwd = ? where email = ? ";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, passwd);
+			pstmt.setString(2, email);
+			pstmt.executeUpdate();
+			return true;
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		
+		} finally {
+			disconnect();
+		}
+		
+		return false;
 	}
 }

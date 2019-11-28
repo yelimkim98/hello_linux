@@ -22,12 +22,12 @@
 		
 		$(document).ready(function(){
 			screenWidth = parent.screenWidth;
-			$('#command_input').css("width", (screenWidth - $('#last_line_header').width() - 16) + "px");
+			$('#command_input').css("width", (screenWidth - $('#last_line_header').width() - 50) + "px");
 			
 			$(window).resize(function(){
 				screenWidth = parent.screenWidth;
 				$('#command_input').css("width",
-					(screenWidth - $('#last_line_header').width() - 16) + "px");
+					(screenWidth - $('#last_line_header').width() - 50) + "px");
 			})
 			
 			$("#command_input").focus();
