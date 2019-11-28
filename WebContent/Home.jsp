@@ -1,12 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 
+<jsp:useBean id="visitLogDAO" scope="page" class="helloLinux.log.VisitLogDAO" />
+
 <%
 boolean isLogined = false;
 
+final String URL = "HelloLinux/Home.jsp";
+
 if(session.getAttribute("email") != null) {
 	isLogined = true;
-} %>
+	visitLogDAO.visitLogging(URL, session.getAttribute("email").toString());
+}
+else {
+	visitLogDAO.visitLogging(URL);
+}
+
+%>
 
 <!DOCTYPE html>
 <html>

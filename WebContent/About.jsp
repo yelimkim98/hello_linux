@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<jsp:useBean id="memberDAO" class="helloLinux.member.MemberDAO" scope="page" />
+<jsp:useBean id="visitLogDAO" class="helloLinux.log.VisitLogDAO" scope="page" />
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -7,9 +12,13 @@ Hello Linux/About
 <script>
 window.onload = function () {
 
-var totalVisitors = 25;
-var girls = 12;
-var boys = 13;
+var girls = <%= visitLogDAO.getNotMemberVisitingCnt() %>	<%-- 방문자중 회원이 아닌 방문자 수 --%>
+			<%--	<%= memberDAO.getFemaleMemberCnt() %>; 	--%> <%-- 회원 중 여성인 회원의 수 --%>
+			
+var boys =  <%= visitLogDAO.getMemberVisitingCnt() %> <%-- 회원의 방문 횟수 --%>
+			<%-- <%= memberDAO.getMaleMemberCnt() %>; --%>
+var totalVisitors = girls + boys;
+
 var visitorsData = {
 	"Boys vs Girls Visitors": [{
 		click: visitorsChartDrilldownHandler,

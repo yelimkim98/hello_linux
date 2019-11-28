@@ -155,6 +155,8 @@ public class MemberDAO {
 		
 		return member;
 	}
+	
+	
 	public Member findAccount(String name, String email, int year, int month, int day) {
 		connect();
 		
@@ -190,6 +192,13 @@ public class MemberDAO {
 		
 		return m;
 	}
+	
+	/**
+	 * 
+	 * @param email
+	 * @param passwd
+	 * @return true when reset is successed, false when reset is failed
+	 */
 	public boolean resetPw(String email, String passwd) {
 		connect();
 		
@@ -211,4 +220,70 @@ public class MemberDAO {
 		
 		return false;
 	}
+	
+	
+	/**
+	 * @return the number of female members
+	 */
+	public int getFemaleMemberCnt() {
+		connect();
+		
+		int ret = -1;
+		String sql = "select count(*) as cnt from hellolinux.member "
+				+ "group by sex "
+				+ "having sex=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "female");
+			
+			ResultSet result = pstmt.executeQuery();
+			
+			if(result.next()) {
+				ret = result.getInt("cnt");
+				result.close();
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		
+		return ret;
+	}
+	
+	
+	/**
+	 * @return the number of female members
+	 */
+	public int getMaleMemberCnt() {
+		connect();
+		
+		int ret = -1;
+		String sql = "select count(*) as cnt from hellolinux.member "
+				+ "group by sex "
+				+ "having sex=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "male");
+			
+			ResultSet result = pstmt.executeQuery();
+			
+			if(result.next()) {
+				ret = result.getInt("cnt");
+				result.close();
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		
+		return ret;
+	}
+
+
 }
