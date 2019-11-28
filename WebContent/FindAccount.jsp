@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+	request.setCharacterEncoding("UTF-8");
+	String fail = (String)pageContext.getSession().getAttribute("fail");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +17,9 @@
 	<style>
 		body {
 			font-family: 'Noto Sans KR', sans-serif;
+		}
+		.who{
+			color: green;
 		}
 	</style>
     <title>HELLO UNIX</title>
@@ -77,7 +86,7 @@
 		<form name="find" method="post" action="UserControl.jsp" onsubmit="return checkForm();">
 			<input type="hidden" name="action" value="find">
 			<a href="Home.jsp" class="title">HELLO LINUX</a>
-			<span>비밀번호 찾기 &nbsp; 〉&nbsp; 본인 확인</span>
+			<span>비밀번호 찾기 &nbsp; 〉&nbsp; </span><span class="who"> 본인 확인</span>
 			<hr>
 			<input type="text" name="name" id="name" placeholder="이름" maxlength="40">
 			<input type="text" name="email" id="email" placeholder="이메일" maxlength="40">
@@ -99,6 +108,9 @@
 			<input type="submit" name="submit" value="다음">
 			<br><br>
 		</form>
+		<% if(fail != null && fail.equals("fail")) { %>
+				<%="<div style=\"color: red;\">존재하지 않는 계정입니다.</div>" %>
+		<% } %>
 	</div>
 	<footer>Copyright ⓒ 2016-2019 Hello Linux</footer>
 </body>

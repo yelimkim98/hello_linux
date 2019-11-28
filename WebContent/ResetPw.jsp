@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+	request.setCharacterEncoding("UTF-8");
+	String email = (String)pageContext.getSession().getAttribute("email");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +17,9 @@
 	<style>
 		body {
 			font-family: 'Noto Sans KR', sans-serif;
+		}
+		.who{
+			color: green;	
 		}
 	</style>
     <title>HELLO UNIX</title>
@@ -60,8 +69,9 @@
 	<div id="resetPw_main">
 		<form name="reset" method="post" action="UserControl.jsp" onsubmit="return checkForm();">
 			<input type="hidden" name="action" value="reset">
+			<%= "<input type=\"hidden\" name=\"email\" value=\"" + email +"\">" %>
 			<a href="Home.jsp" class="title">HELLO LINUX</a>
-			<span>비밀번호 찾기 &nbsp; 〉&nbsp; 본인 확인 &nbsp; 〉&nbsp; 비밀번호 재설정</span>
+			<span>비밀번호 찾기 &nbsp; 〉&nbsp; 본인 확인 &nbsp; 〉&nbsp; </span><span class="who">비밀번호 재설정</span>
 			<hr>
 			<input type="password" name="passwd" id="pswd" placeholder="비밀번호" onchange="passwdCheckMsg();" size=15 maxlength="20">
 			<input type="password" id="pswdCk" placeholder="비밀번호 확인" onchange="passwdCheckMsg();" size=15 maxlength="20">

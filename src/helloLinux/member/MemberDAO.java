@@ -161,7 +161,7 @@ public class MemberDAO {
 		Member m = null;
 		String sql = "select * from hellolinux.member "
 				+ "where name = ? and email = ? "
-				+ "and birth_year = ? and birth_month = ? and"
+				+ "and birth_year = ? and birth_month = ? and "
 				+ "birth_day = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);

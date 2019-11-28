@@ -99,8 +99,11 @@
 		
 		member = memberDAO.findAccount(name, email, year, month, day);
 		if(member != null){
+			pageContext.getSession().setAttribute("email", email);
 			response.sendRedirect("ResetPw.jsp");
 		} else { // 계정찾기 실패
+			String fail = "fail";
+			pageContext.getSession().setAttribute("fail", fail);
 			response.sendRedirect("FindAccount.jsp");
 //			out.println("<script>alert('없는 계정입니다.');</script>");
 		}
@@ -117,7 +120,6 @@
 		}
 		else {
 			response.sendRedirect("Login.jsp");
-			out.println("<script>alert('비밀번호가 성공적으로 변경되었습니다.');</script>");
 		}
 	}
 %>
