@@ -35,7 +35,7 @@ if(session.getAttribute("email") != null) {
 		    	</ul>
 	    	</a>
 	    	<ul class="right-ul">
-	       		<li>ABOUT</li>
+	       		<li><a href="About.jsp">ABOUT</a></li>
 	       		<% if(isLogined == false) {%>
 	       			<%="<li><a href=\"Login.jsp\">LOGIN</a></li>" %>
 	       			<%="<li><a href=\"Join.jsp\">회원가입</a></li>" %>

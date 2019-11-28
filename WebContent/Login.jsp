@@ -5,7 +5,6 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/Login.css?after" />
-    <link type="text/css" rel="stylesheet" href="/temp.css">
     <link rel="shortcut icon" type="image/x-icon" href="home/logo.png"/>
     <title>HELLO UNIX</title>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -63,9 +62,9 @@
 				  		<td colspan="3"><hr></td>
 				  </tr>
 				  <tr class="bottom">
-					  	<td><a href="#"> 아이디 찾기
-					  	<td><a href="#"> 비밀번호 찾기
-				  		<td><a href="Join.jsp"> 회원가입
+				  		<td><a href="About.jsp"> ABOUT</a></td>
+					  	<td><a href="FindAccount.jsp"> 비밀번호 찾기</a></td>
+				  		<td><a href="Join.jsp"> 회원가입</a></td>
 				  </tr>
 				  <tr>
 				  		<td colspan="3">Copyright ⓒ 2016-2019 Hello Linux</td>
