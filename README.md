@@ -102,7 +102,7 @@ https://mystyle1057.tistory.com/m/entry/MySQL-Workbench-%EC%82%AC%EC%9A%A9%EC%9E
           
           // 6-3 : visit_log 테이블 생성
           create table hellolinux.visit_log (
-               vid int not null,
+               vid int not null AUTO_INCREMENT,
                date DATE not null,
                email varchar(60),
                url varchar(100) not null,
