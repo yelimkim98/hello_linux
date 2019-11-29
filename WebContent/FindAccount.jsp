@@ -1,9 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
+<jsp:useBean id="visitLogDAO" scope="page" class="helloLinux.log.VisitLogDAO" />
+
 <%
+	/* 이전에 계정찾기에 실패했는지 여부 얻기 */
 	request.setCharacterEncoding("UTF-8");
-	String fail = (String)pageContext.getSession().getAttribute("fail");
+	String fail = (String)pageContext.getSession().getAttribute("fail"); /* 직전에 계정찾기 실패했으면 fail.equals("fail")이 true */
+%>
+
+<%
+	/* 페이지 방문 로그 남기기*/
+	final String URL = "HelloLinux/Home.jsp";
+	
+	if(session.getAttribute("email") != null) {
+		visitLogDAO.visitLogging(URL, session.getAttribute("email").toString());
+	}
+	else {
+		visitLogDAO.visitLogging(URL);
+	}
 %>
 
 <!DOCTYPE html>

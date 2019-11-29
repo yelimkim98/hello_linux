@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<jsp:useBean id="visitLogDAO" scope="page" class="helloLinux.log.VisitLogDAO" />
+
 <%
 	// 원하는 강의 페이지가 변수 req에 저장된다. ex) req = "2-2"; 
 	request.setCharacterEncoding("UTF-8");
@@ -11,6 +13,21 @@
 	if(req==null){
 		// Lecture List 를 통해 접속하지 않아서  무슨 강의 페이지를 원하는지 알려주지 않는 접속
 		response.sendRedirect("Home.jsp");
+	}
+%>
+
+<%
+	/* 페이지 방문 로그 남기기*/
+	final String URL = "HelloLinux/LecViewConsole.jsp";
+	String lectureURL = "HelloLinux/Ch" + req + ".jsp";
+	
+	if(session.getAttribute("email") != null) {
+		visitLogDAO.visitLogging(URL, session.getAttribute("email").toString());
+		visitLogDAO.visitLogging(lectureURL, session.getAttribute("email").toString());
+	}
+	else {
+		visitLogDAO.visitLogging(URL);
+		visitLogDAO.visitLogging(lectureURL);
 	}
 %>
 

@@ -133,7 +133,7 @@ public class VisitLogDAO {
 	public int getNotMemberVisitingCnt() {
 		connect();
 		
-		int ret = -1;
+		int ret = 0;
 		String sql = "select count(*) as cnt from hellolinux.visit_log where email is null";
 		
 		try {
@@ -163,11 +163,37 @@ public class VisitLogDAO {
 	public int getMemberVisitingCnt() {
 		connect();
 		
-		int ret = -1;
+		int ret = 0;
 		String sql = "select count(*) as cnt from hellolinux.visit_log where not email is null";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
+			
+			ResultSet result = pstmt.executeQuery();
+			
+			if(result.next()) {
+				ret = result.getInt("cnt");
+				result.close();
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		
+		return ret;
+	}
+	
+	public int getViewPageVisitCount(String url) {
+		connect();
+		
+		int ret = 0;
+		String sql = "select count(*) as cnt from hellolinux.visit_log where url=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, url);
 			
 			ResultSet result = pstmt.executeQuery();
 			

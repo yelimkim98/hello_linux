@@ -1,6 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
+<jsp:useBean id="visitLogDAO" scope="page" class="helloLinux.log.VisitLogDAO" />
+
+<%
+	/* 페이지 방문 로그 남기기*/
+	final String URL = "HelloLinux/ResetPw.jsp";
+	
+	if(session.getAttribute("email") != null) {
+		visitLogDAO.visitLogging(URL, session.getAttribute("email").toString());
+	}
+	else {
+		visitLogDAO.visitLogging(URL);
+	}
+%>
+
 <%
 	request.setCharacterEncoding("UTF-8");
 	String email = (String)pageContext.getSession().getAttribute("email");

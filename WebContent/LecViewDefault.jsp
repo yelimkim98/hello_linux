@@ -13,6 +13,23 @@
 	}
 %>
 
+<jsp:useBean id="visitLogDAO" scope="page" class="helloLinux.log.VisitLogDAO" />
+
+<%
+	/* 페이지 방문 로그 남기기*/
+	final String URL = "HelloLinux/LecViewDefault.jsp";
+	String lectureURL = "HelloLinux/Ch" + req + ".jsp";
+	
+	if(session.getAttribute("email") != null) {
+		visitLogDAO.visitLogging(URL, session.getAttribute("email").toString());
+		visitLogDAO.visitLogging(lectureURL, session.getAttribute("email").toString());
+	}
+	else {
+		visitLogDAO.visitLogging(URL);
+		visitLogDAO.visitLogging(lectureURL);
+	}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,50 +38,39 @@
 	<meta charset="UTF-8">
 	<title>Hello Linux Lecture</title>
 
-<!---------------------- 한국어 웹폰트 적용 ------------------------>
-
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Nanum+Myeongjo&display=swap" rel="stylesheet">
-	<style>
-		header {
-			/* 상단의 나타났다가 없어졌다가 하는 부분에 폰트 적용 */
-			font-family: 'Nanum Gothic Coding', monospace;
-		}
-		article {
-			/* 본문(목차)에 폰트 적용 */
-			font-family: 'Nanum Myeongjo', serif;
-		}
-	</style>
-
-<!------------------------------------------------------------>
-
-<!------------------------ 목차버튼 & 콘솔버튼 나타났다 사라졌다 하는 기능 ------------------------->
+	<!---------------------- 한국어 웹폰트 적용 ------------------------>
 	
-	<!-- jQuery import -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-	  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	  		crossorigin="anonymous">
-	</script>
-	<script>
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Nanum+Myeongjo&display=swap" rel="stylesheet">
+		<style>
+			header {
+				/* 상단의 나타났다가 없어졌다가 하는 부분에 폰트 적용 */
+				font-family: 'Nanum Gothic Coding', monospace;
+			}
+			article {
+				/* 본문(목차)에 폰트 적용 */
+				font-family: 'Nanum Myeongjo', serif;
+			}
+		</style>
 	
-		$(document).ready(function(){
-			var h = window.innerHeight / 2;
-			
-			$('#lecture_list').css('top', h + 'px' );
-			$('#console').css('top', h + 'px' );
+	<!------------------------------------------------------------>
 
-			// 페이지에 처음 접속했을 때 화면 크기에 따라서
-			// 목록 버튼과 실습창 버튼 보여줄지 말지
-			if( ( $(document).width() - $('#lecText').width() ) / 4 > 40){
-				$('#lecture_list').css('display', 'block');
-				$('#console').css('display', 'block');
-			}
-			else {
-				$('#lecture_list').css('display', 'none');
-				$('#console').css('display', 'none');
-			}
-
-			// 화면 크기가 변경됬을 때, 목록 버튼과 실습창 버튼을 보여줄지 말지
-			$(window).resize(function(){
+	<!------------------------ 목차버튼 & 콘솔버튼 나타났다 사라졌다 하는 기능 ------------------------->
+		
+		<!-- jQuery import -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		  		crossorigin="anonymous">
+		</script>
+		<script>
+		
+			$(document).ready(function(){
+				var h = window.innerHeight / 2;
+				
+				$('#lecture_list').css('top', h + 'px' );
+				$('#console').css('top', h + 'px' );
+	
+				// 페이지에 처음 접속했을 때 화면 크기에 따라서
+				// 목록 버튼과 실습창 버튼 보여줄지 말지
 				if( ( $(document).width() - $('#lecText').width() ) / 4 > 40){
 					$('#lecture_list').css('display', 'block');
 					$('#console').css('display', 'block');
@@ -73,11 +79,22 @@
 					$('#lecture_list').css('display', 'none');
 					$('#console').css('display', 'none');
 				}
+	
+				// 화면 크기가 변경됬을 때, 목록 버튼과 실습창 버튼을 보여줄지 말지
+				$(window).resize(function(){
+					if( ( $(document).width() - $('#lecText').width() ) / 4 > 40){
+						$('#lecture_list').css('display', 'block');
+						$('#console').css('display', 'block');
+					}
+					else {
+						$('#lecture_list').css('display', 'none');
+						$('#console').css('display', 'none');
+					}
+				})
 			})
-		})
-	</script>
-
-<!----------------------------------------------------------------------------------->
+		</script>
+	
+	<!----------------------------------------------------------------------------------->
 	
 </head>
 <body>
@@ -88,7 +105,7 @@
 	</nav>
 	<section>
 		<article id="lecture_list">
-			<a>▶ 목차</a>
+			<%="<a href=\"LecViewList.jsp?lec=" + req + "\">▶ 목차</a>"%>
 		</article>
 		<article id="console">
 			<%="<a href=\"LecViewConsole.jsp?lec=" + req + "\">실습창 ◀</a>"%>
