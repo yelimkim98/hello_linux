@@ -47,3 +47,8 @@ a:visited {
 	text-decoration:none;
 	color: white;
 }
+
+h1 {
+	 font-size: 20px;
+	 margin-bottom: 8px;
+}

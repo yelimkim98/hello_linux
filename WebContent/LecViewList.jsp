@@ -95,13 +95,13 @@
 							</ul>
 						</nav>
 					</td>
-					
 					<td id="fold_td">
-						<%="<a href=\"LecViewDefault.jsp?lec=" + req + "\">" %>
-							<div id="fold">◀<br>접<br>기</div>
+						<%="<a id=\"fold_a\" href=\"LecViewDefault.jsp?lec=" + req + "\">" %>
+							<div id="fold">
+								◀<br>접<br>기
+							</div>
 						<%= "</a>" %>
 					</td>
-					
 				</tr>
 			</table>
 		</div>
