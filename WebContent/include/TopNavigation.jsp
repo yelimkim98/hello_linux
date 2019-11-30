@@ -92,7 +92,7 @@
 </ul>
 </a>
 <ul class="top-navigation right-ul">
-	<li class="top-navigation"><a href="MostVisitedViewPage.jsp">ABOUT</a></li>
+	<li class="top-navigation"><a href="About.jsp">ABOUT</a></li>
 
 <%	boolean isLogined = false;
 	

@@ -12,11 +12,9 @@ Hello Linux/About
 <script>
 window.onload = function () {
 
-var girls = <%-- <%= visitLogDAO.getNotMemberVisitingCnt() %>	<%-- 방문자중 회원이 아닌 방문자 수 --%>
-			<%= memberDAO.getFemaleMemberCnt() %>; <%-- 회원 중 여성인 회원의 수 --%>
+var girls = <%= memberDAO.getFemaleMemberCnt() %>;
 			
-var boys =  <%-- <%= visitLogDAO.getMemberVisitingCnt() %> <%-- 회원의 방문 횟수 --%>
-			<%= memberDAO.getMaleMemberCnt() %>; 
+var boys =  <%= memberDAO.getMaleMemberCnt() %>; 
 var totalVisitors = girls + boys;
 
 var visitorsData = {
@@ -62,15 +60,8 @@ var newVSReturningVisitorsOptions = {
 	animationEnabled: true,
 	theme: "light2",
 	title: {
-		text: "Boys VS Girls Visitors"
+		text: "여성회원 수 vs 남성회원 수"
 	},
-	subtitles: [{
-		text: "Click on Any Segment to Drilldown",
-		backgroundColor: "#2eacd1",
-		fontSize: 16,
-		fontColor: "white",
-		padding: 5
-	}],
 	legend: {
 		fontFamily: "calibri",
 		fontSize: 14,
@@ -104,21 +95,6 @@ var chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
 chart.options.data = visitorsData["Boys vs Girls Visitors"];
 chart.render();
 
-function visitorsChartDrilldownHandler(e) {
-	chart = new CanvasJS.Chart("chartContainer", visitorsDrilldownedChartOptions);
-	chart.options.data = visitorsData[e.dataPoint.name];
-	chart.options.title = { text: e.dataPoint.name }
-	chart.render();
-	$("#backButton").toggleClass("invisible");
-}
-
-$("#backButton").click(function() { 
-	$(this).toggleClass("invisible");
-	chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
-	chart.options.data = visitorsData["Boys vs Girls Visitors"];
-	chart.render();
-});
-
 }
 </script>
 <style>
@@ -140,10 +116,6 @@ $("#backButton").click(function() {
 </style>
 </head>
 <body>
-	<nav>
-		<a href="Home.jsp">Home</a>
-		<a href="PageVisitingCntGraph.jsp">뷰 페이지 별 방문자 수</a>
-	</nav>
 	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
 	<button class="btn invisible" id="backButton">< Back</button>
 	<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>

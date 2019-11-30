@@ -228,7 +228,7 @@ public class MemberDAO {
 	public int getFemaleMemberCnt() {
 		connect();
 		
-		int ret = -1;
+		int ret = 0;
 		String sql = "select count(*) as cnt from hellolinux.member "
 				+ "group by sex "
 				+ "having sex=?";
@@ -260,7 +260,7 @@ public class MemberDAO {
 	public int getMaleMemberCnt() {
 		connect();
 		
-		int ret = -1;
+		int ret = 0;
 		String sql = "select count(*) as cnt from hellolinux.member "
 				+ "group by sex "
 				+ "having sex=?";

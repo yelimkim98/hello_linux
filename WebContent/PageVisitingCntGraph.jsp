@@ -56,10 +56,6 @@ window.onload = function () {
 </script>
 </head>
 <body>
-	<nav>
-		<a href="Home.jsp">Home</a>
-		<a href="MaleFemaleMember.jsp">회원 남녀 성비</a>
-	</nav>
 	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
