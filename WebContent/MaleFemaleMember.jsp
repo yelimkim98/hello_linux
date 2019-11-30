@@ -12,16 +12,16 @@ Hello Linux/About
 <script>
 window.onload = function () {
 
-var girls = <%= visitLogDAO.getNotMemberVisitingCnt() %>	<%-- 방문자중 회원이 아닌 방문자 수 --%>
-			<%--	<%= memberDAO.getFemaleMemberCnt() %>; 	--%> <%-- 회원 중 여성인 회원의 수 --%>
+var girls = <%-- <%= visitLogDAO.getNotMemberVisitingCnt() %>	<%-- 방문자중 회원이 아닌 방문자 수 --%>
+			<%= memberDAO.getFemaleMemberCnt() %>; <%-- 회원 중 여성인 회원의 수 --%>
 			
-var boys =  <%= visitLogDAO.getMemberVisitingCnt() %> <%-- 회원의 방문 횟수 --%>
-			<%-- <%= memberDAO.getMaleMemberCnt() %>; --%>
+var boys =  <%-- <%= visitLogDAO.getMemberVisitingCnt() %> <%-- 회원의 방문 횟수 --%>
+			<%= memberDAO.getMaleMemberCnt() %>; 
 var totalVisitors = girls + boys;
 
 var visitorsData = {
 	"Boys vs Girls Visitors": [{
-		click: visitorsChartDrilldownHandler,
+//		click: visitorsChartDrilldownHandler,
 		cursor: "pointer",
 		explodeOnClick: false,
 		innerRadius: "0%",
@@ -141,6 +141,7 @@ $("#backButton").click(function() {
 </head>
 <body>
 	<nav>
+		<a href="Home.jsp">Home</a>
 		<a href="PageVisitingCntGraph.jsp">뷰 페이지 별 방문자 수</a>
 	</nav>
 	<div id="chartContainer" style="height: 370px; width: 100%;"></div>

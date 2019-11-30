@@ -7,6 +7,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<title>HelloLinux/About</title>
 <script>
 window.onload = function () {
 
@@ -56,6 +57,7 @@ window.onload = function () {
 </head>
 <body>
 	<nav>
+		<a href="Home.jsp">Home</a>
 		<a href="MaleFemaleMember.jsp">회원 남녀 성비</a>
 	</nav>
 	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
