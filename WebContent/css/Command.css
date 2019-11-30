@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+#command-ex {
+		background-color: black;
+		color: white;
+		margin: 5px;
+		padding: 5px;
+		margin-bottom: 20px;
+		min-height: 80px;
+	}

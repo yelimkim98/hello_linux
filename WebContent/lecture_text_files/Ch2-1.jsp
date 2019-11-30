@@ -2,17 +2,9 @@
 
 <head>
 	<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/Command.css" />
 </head>
-<style>
-	#command-ex {
-		background-color: black;
-		color: white;
-		margin: 5px;
-		padding: 5px;
-		margin-bottom: 20px;
-		min-height: 80px;
-	}
-</style>
+
 
 <h1>ls 명령어</h1>
 
