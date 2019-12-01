@@ -86,11 +86,9 @@
 								</ul>
 								<li>Ch3 : vi 사용하기</li>
 								<ul>
-									<li>3.1 vi로 파일 작성하기 : 명령모드, 입력모드, 마지막 줄 모드 (1)</li>
-									<li>3.2 vi로 파일 작성하기 : 명령모드, 입력모드, 마지막 줄 모드 (2)</li>
-									<li>3.3</li>
-									<li>3.4</li>
-									<li>3.5</li>
+									<li><a href="CommingSoon.jsp">3.1 vi로 파일 작성하기 : 명령모드, 입력모드, 마지막 줄 모드 (1)</a></li>
+									<li><a href="CommingSoon.jsp">3.2 vi로 파일 작성하기 : 명령모드, 입력모드, 마지막 줄 모드 (2)</a></li>
+									<li><a href="CommingSoon.jsp">3.3 vi로 파일 작성하기 : 명령모드, 입력모드, 마지막 줄 모드 (2)</a></li>
 								</ul>
 							</ul>
 						</nav>
