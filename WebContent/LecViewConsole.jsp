@@ -89,7 +89,11 @@
 			<% if(req != null){
 					// req 에는 원하는 강의 페이지가 저장되어있다. 
 					// ex) req = "2-2"; 
-					if(req.equals("2-1")) { %>
+					if (req.equals("1-1")){ %>
+						<%@include file="lecture_text_files/Ch1-1.jsp" %>
+					<% } else if(req.equals("1-2")) { %>
+					
+					<% } else if(req.equals("2-1")) { %>
 						<%@include file="lecture_text_files/Ch2-1.jsp" %>
 					<%} else if(req.equals("2-2")) { %>
 						<%@include file="lecture_text_files/Ch2-2.jsp" %>

@@ -4,18 +4,61 @@
  
 body {
 	color: white;
-    background-color: #244e99;
-    background-image: url(../img/home/ocean.png);
+    background-color: #244e80;
     background-repeat: no-repeat;
     background-size: cover;
     align-content: center;
+    padding-top: 50px;
 }
 
- 
+#left_lecture_list{
+	display: inline-block;
+	position:absolute;
+	left:2%;
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	width:30%;
+}
+
+#right_lecture {
+	display: inline-block;
+	position:absolute;
+	right:2%;
+	width: 60%;
+	padding: 2px;
+}
+
+.lecture_list li {
+	margin-bottom: 17px;	
+	font-size: 17px;
+	list-style: none;
+}
+
+ul > ul {
+	text-indent: 50px;
+}
+
+.lecture_list {
+	display: inline-block;
+	position:relative;
+	left:0;
+	padding: 5px;
+	/*width: 70%;
+	border: 2px dashed red;*/
+}
+
+h1 {
+	 font-size: 20px;
+	 margin-bottom: 8px;
+}
+
 header {
     height:400px;
-    margin:auto;
-    text-align: center;
+    /*margin:auto;*/
+    text-align: left;
+    margin-left: 20px;
     margin-top: 130px;
-    font-size: 35px;
+}
+
+.commingsoon {
+    font-size: 50px;
 }

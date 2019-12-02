@@ -69,7 +69,7 @@
 							<ul>
 								<li>Ch1 : 리눅스란?</li>
 								<ul>
-									<li>1.1 운영체제란?</li>
+									<li><a href="LecViewDefault.jsp?lec=1-1">1.1 운영체제란?</a></li>
 									<li>1.2 리눅스 소개</li>
 								</ul>
 								<li>Ch2 : 리눅스 기본 명령어</li>
@@ -109,7 +109,11 @@
 			<% if(req != null){
 					// req 에는 원하는 강의 페이지가 저장되어있다. 
 					// ex) req = "2-2"; 
-					if(req.equals("2-1")) { %>
+					if (req.equals("1-1")){ %>
+						<%@include file="lecture_text_files/Ch1-1.jsp" %>
+					<% } else if(req.equals("1-2")) { %>
+					
+					<% } else if(req.equals("2-1")) { %>
 						<%@include file="lecture_text_files/Ch2-1.jsp" %>
 					<%} else if(req.equals("2-2")) { %>
 						<%@include file="lecture_text_files/Ch2-2.jsp" %>

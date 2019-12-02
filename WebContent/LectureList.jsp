@@ -29,7 +29,7 @@
 		<ul>
 			<li>Ch1 : 리눅스란?</li>
 			<ul>
-				<li>1.1 운영체제란?</li>
+				<li><a href="LecViewDefault.jsp?lec=1-1">1.1 운영체제란?</a></li>
 				<li>1.2 리눅스 소개</li>
 			</ul>
 			<li>Ch2 : 리눅스 기본 명령어</li>
