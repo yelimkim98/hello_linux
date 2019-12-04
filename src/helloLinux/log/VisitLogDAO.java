@@ -210,5 +210,31 @@ public class VisitLogDAO {
 		
 		return ret;
 	}
-	
+
+	public int getMyProgress(String email) {
+		connect();
+		
+		int ret = 0;
+		String sql = "select count(distinct(url)) as cnt from hellolinux.visit_log where email = ? and "
+				+ "url like ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, "%ch%");
+			ResultSet result = pstmt.executeQuery();
+			
+			if(result.next()) {
+				ret = result.getInt("cnt");
+				result.close();
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		
+		return ret;
+	}
 }
